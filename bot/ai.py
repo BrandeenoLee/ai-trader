@@ -114,14 +114,25 @@ class ClaudeAI:
         self.client = anthropic.Anthropic()
 
     def _call(self, model, system, user, tool, max_tokens):
-        resp = self.client.messages.create(
-            model=model, max_tokens=max_tokens, system=system, tools=[tool],
-            tool_choice={"type": "tool", "name": tool["name"]},
-            messages=[{"role": "user", "content": user}],
-        )
-        usage = {"input_tokens": resp.usage.input_tokens, "output_tokens": resp.usage.output_tokens}
-        block = next((b for b in resp.content if b.type == "tool_use"), None)
-        return (block.input if block else {}), usage
+        # Current models only allow tool_choice "auto", so the instruction asks for the tool
+        # and a missing call is retried once with a nudge.
+        system = system + f"\n\nAlways answer by calling the {tool['name']} tool exactly once."
+        messages = [{"role": "user", "content": user}]
+        usage = {"input_tokens": 0, "output_tokens": 0}
+        for attempt in range(2):
+            resp = self.client.messages.create(
+                model=model, max_tokens=max_tokens, system=system, tools=[tool],
+                tool_choice={"type": "auto"}, messages=messages,
+            )
+            usage["input_tokens"] += resp.usage.input_tokens
+            usage["output_tokens"] += resp.usage.output_tokens
+            block = next((b for b in resp.content if b.type == "tool_use"), None)
+            if block:
+                return block.input, usage
+            text = "".join(getattr(b, "text", "") for b in resp.content)
+            messages = messages + [{"role": "assistant", "content": text or "(no answer)"},
+                                   {"role": "user", "content": f"Please submit your answer by calling the {tool['name']} tool."}]
+        return {}, usage
 
     def decide(self, system: str, user: str) -> tuple[dict, dict]:
         return self._call(config.TRADER_MODEL, system, user, DECISION_TOOL,

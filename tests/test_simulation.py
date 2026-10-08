@@ -62,7 +62,7 @@ def test_two_week_tournament(isolated):
 
 def test_closed_market_and_off_slot_do_nothing(isolated):
     b, a = broker.FakeBroker(today="2026-10-12"), ai.FakeAI()
-    at(b, date(2026, 10, 12), "10:30")  # between slots
+    at(b, date(2026, 10, 12), "09:35")  # before the first slot
     assert checkin.run(b, a)["ran"] == []
     b.clock = lambda: {"is_open": False, "now": b.now}
     assert checkin.run(b, a, force=True)["ran"] == []
@@ -88,4 +88,18 @@ def test_duplicate_trigger_for_same_slot_is_skipped(isolated):
     at(b, date(2026, 10, 12), "09:47")
     assert checkin.run(b, a)["ran"]
     at(b, date(2026, 10, 12), "10:10")  # a delayed second trigger for the same slot
+    assert checkin.run(b, a)["ran"] == []
+
+
+def test_missed_morning_slot_is_caught_up_once(isolated):
+    b, a = broker.FakeBroker(today="2026-10-12"), ai.FakeAI()
+    at(b, date(2026, 10, 12), "11:20")  # the 9:45 trigger never fired
+    assert set(checkin.run(b, a)["ran"]) >= {"A", "B", "C", "D"}
+    at(b, date(2026, 10, 12), "11:50")
+    assert checkin.run(b, a)["ran"] == []  # level-2 strategies wait for the 15:30 slot
+
+
+def test_no_new_checkins_right_before_close(isolated):
+    b, a = broker.FakeBroker(today="2026-10-12"), ai.FakeAI()
+    at(b, date(2026, 10, 12), "15:55")
     assert checkin.run(b, a)["ran"] == []

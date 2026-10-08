@@ -137,7 +137,7 @@ With keys exported in your shell, `python -m bot.checkin --force` runs a real pa
 
 - Six to eight weeks can't separate skill from luck.
 - Paper fills are still cleaner than real ones, especially for small caps.
-- GitHub's scheduler can start runs late; a run more than 40 minutes past its slot is skipped.
+- GitHub's scheduler can drop or delay runs; the next trigger catches up a missed slot (no new check-ins after 3:50pm ET).
 - If two strategies place opposite orders in the same stock at once, Alpaca may reject one as a
   potential wash trade. It's logged and the strategy tries again at its next check-in.
 - Never switch to live trading (`ALPACA_LIVE=1`) without reviewing the paper results first.

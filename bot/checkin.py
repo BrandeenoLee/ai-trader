@@ -22,16 +22,23 @@ SLOTS_FILE = "slots_run.json"
 TERMINAL = {"filled", "canceled", "expired", "rejected", "done_for_day", "replaced", "stopped", "suspended"}
 
 
-def current_slot(now_utc: datetime) -> int | None:
-    """Index into CHECKIN_SLOTS_ET for this moment, or None if no slot is due."""
+def _slot_minutes(s: str) -> int:
+    h, m = map(int, s.split(":"))
+    return h * 60 + m
+
+
+def current_slot(now_utc: datetime, done: list | None = None) -> int | None:
+    """The slot to run now: the highest-priority slot whose time has passed today and that
+    hasn't run yet. A late or missed trigger is caught up by the next one, but nothing new
+    starts in the last minutes before the close."""
     et = now_utc.astimezone(ET)
     minutes = et.hour * 60 + et.minute
-    for i, s in enumerate(config.CHECKIN_SLOTS_ET):
-        h, m = map(int, s.split(":"))
-        start = h * 60 + m
-        if start <= minutes < start + config.SLOT_TOLERANCE_MIN:
-            return i
-    return None
+    if minutes >= config.LAST_CHECKIN_ET_MIN:
+        return None
+    done = done or []
+    due = [i for i, s in enumerate(config.CHECKIN_SLOTS_ET)
+           if _slot_minutes(s) <= minutes and i not in done]
+    return min(due) if due else None
 
 
 def ensure_ledger(broker, today: str) -> dict:
@@ -173,15 +180,12 @@ def run(broker=None, ai=None, force: bool = False, now_utc: datetime | None = No
     if not clock["is_open"]:
         print("Market closed; nothing to do.")
         return {"ran": []}
-    slot = None if force else current_slot(now_utc)
-    if slot is None and not force:
-        print(f"No check-in slot due at {now_et:%H:%M} ET.")
-        return {"ran": []}
-
+    slot = None
     if not force:
         done = state.load(SLOTS_FILE, {})
-        if slot in done.get(today, []):
-            print(f"Slot {slot + 1} already ran today; skipping duplicate trigger.")
+        slot = current_slot(now_utc, done.get(today, []))
+        if slot is None:
+            print(f"No check-in slot due at {now_et:%H:%M} ET.")
             return {"ran": []}
         state.save(SLOTS_FILE, {today: done.get(today, []) + [slot]})
 

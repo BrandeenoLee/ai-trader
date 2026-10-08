@@ -48,7 +48,7 @@ CHECKIN_SLOTS_ET = ["09:45", "15:30", "12:30", "11:00", "14:00"]
 CHECKIN_START_LEVEL = 2
 CHECKIN_MIN_LEVEL = 1
 CHECKIN_MAX_LEVEL = 5
-SLOT_TOLERANCE_MIN = 40  # a run within this many minutes after a slot counts as that slot
+LAST_CHECKIN_ET_MIN = 15 * 60 + 50  # no check-ins start after 3:50pm ET
 MAX_ORDERS_PER_DAY = 6  # per strategy
 
 # --- AI models and budget ----------------------------------------------------

@@ -127,8 +127,10 @@ class ClaudeAI:
             usage["input_tokens"] += resp.usage.input_tokens
             usage["output_tokens"] += resp.usage.output_tokens
             block = next((b for b in resp.content if b.type == "tool_use"), None)
-            if block:
+            if block and resp.stop_reason != "max_tokens":
                 return block.input, usage
+            if resp.stop_reason == "max_tokens":
+                print(f"warning: {model} hit max_tokens before finishing its answer")
             text = "".join(getattr(b, "text", "") for b in resp.content)
             messages = messages + [{"role": "assistant", "content": text or "(no answer)"},
                                    {"role": "user", "content": f"Please submit your answer by calling the {tool['name']} tool."}]

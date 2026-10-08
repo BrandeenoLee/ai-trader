@@ -62,8 +62,8 @@ MODEL_PRICES = {
 }
 MONTHLY_TARGET_USD = 5.00  # soft target: throttle weakest strategies when ahead of pace
 MONTHLY_HARD_CAP_USD = 20.00  # hard stop for all AI calls in a calendar month
-MAX_OUTPUT_TOKENS_TRADER = 800
-MAX_OUTPUT_TOKENS_REVIEW = 3000
+MAX_OUTPUT_TOKENS_TRADER = 2000  # only tokens actually used are billed
+MAX_OUTPUT_TOKENS_REVIEW = 6000
 
 # --- Liquid universe for strategies A, B, C (E may also use it) -------------
 LIQUID_UNIVERSE = [

@@ -225,4 +225,5 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    from .ghreport import run_reported
+    sys.exit(run_reported(main))

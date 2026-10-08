@@ -1,8 +1,50 @@
 # AI Strategy Tournament
 
-Five Claude-driven trading strategies compete in an Alpaca **paper** account, each with a
-virtual $500. Every Friday, Claude reviews each strategy's week and rewrites its notes. The
-goal is to find out whether any of them beats SPY buy-and-hold after trading and AI costs.
+[![Tests](https://github.com/BrandeenoLee/ai-trader/actions/workflows/tests.yml/badge.svg)](https://github.com/BrandeenoLee/ai-trader/actions/workflows/tests.yml)
+
+**Live dashboard:** https://brandeenolee.github.io/ai-trader/
+
+Five AI-driven trading strategies compete in a paper-trading account, each with a virtual $500.
+Every Friday an AI reviewer reads each strategy's trades and rewrites its rules. After 6-8 weeks,
+the question is simple: does any of them beat just buying SPY and holding it, once trading costs
+and AI costs are counted?
+
+## Why I built this
+
+This started as a curiosity: can an AI actually trade a small account on its own, and does it
+get better over time? A second question turned out to be more interesting: when an AI says it's
+confident about a trade, does that confidence mean anything? Every trade here carries a 1-10
+confidence score, and the results are tracked against it.
+
+The project is also an exercise in building around an AI safely. The model never touches money
+directly. It can only propose trades, and plain code decides whether they go through.
+
+## Design highlights
+
+- **The AI proposes, code decides.** Every proposed order passes a guardrail layer
+  ([`bot/guardrails.py`](bot/guardrails.py)) that enforces cash-only trading, no shorting or options,
+  limit orders only, and exclusions. Orders that break a rule are trimmed or rejected, and the reason
+  is logged.
+- **Confidence-scaled position sizing.** The AI's stated confidence sets the maximum position size
+  (15% / 35% / 75% of a strategy's equity), and the weekly review checks whether high-confidence trades
+  actually beat low-confidence ones.
+- **Honest paper results.** Paper fills are unrealistically clean, so every fill is charged a simulated
+  spread penalty, small-cap orders are capped at 1% of daily volume, and each strategy pays for its own
+  AI usage out of its returns.
+- **A tournament instead of one bot.** Strategies earn more check-ins per day by beating SPY and lose
+  them by trailing it. One strategy is designed from scratch by the AI each week, with its confidence
+  logged so the AI's self-assessment can be scored.
+- **Realistic cash-account accounting.** Each strategy has its own virtual sub-account with next-day
+  settlement of sale proceeds, reserved cash for open orders, and partial-fill handling
+  ([`bot/ledger.py`](bot/ledger.py)).
+- **Runs unattended on a budget.** GitHub Actions runs check-ins on a schedule, commits state back to
+  the repo, and emails a Friday recap. AI spend is tracked per call, with a $5/month target and a hard
+  $20/month stop.
+- **Tested without keys.** A market simulator and a stand-in AI let the full system run end to end in
+  tests, including a simulated two-week tournament.
+
+**Stack:** Python, Alpaca Trading API (paper), Claude API, GitHub Actions, GitHub Pages.
+Built with Claude as a coding partner.
 
 | Strategy | Idea |
 | --- | --- |
@@ -21,8 +63,7 @@ market data -> Claude proposes -> guardrails (plain code) -> Alpaca -> trade jou
                     +---- strategy notes <---- Friday review (Opus) <-----+
 ```
 
-- **The AI proposes; code decides.** `bot/guardrails.py` trims or rejects anything that breaks a rule.
-  Rules: stocks/ETFs only, no shorting or margin, settled cash only, limit orders within 3% of the
+- **Rules enforced in code:** stocks/ETFs only, no shorting or margin, settled cash only, limit orders within 3% of the
   price, GME and AMC excluded, listed exchanges only, at most 6 orders per strategy per day.
 - **Confidence-scaled sizing.** Max share of a strategy's equity in one position: confidence 1-4 → 15%,
   5-7 → 35%, 8-10 → 75%.
@@ -54,8 +95,7 @@ All settings live in `bot/config.py`.
 3. **Optional smoke test**: Actions → *Check-in* → Run workflow with *force* ticked while the market
    is open. Every strategy decides once; check the journal and the Alpaca paper dashboard.
 4. **Dashboard**: Settings → Pages → Deploy from a branch → `main`, folder `/docs`.
-   Note: a Pages site is public even when the repo is private. It shows trades and reasoning only,
-   never keys.
+   The page is generated after the first check-in. It shows trades and reasoning only, never keys.
 
 After that, everything runs on schedule: check-ins at 9:45, 11:00, 12:30, 14:00 and 15:30 ET on
 trading days, and the review plus recap email on Fridays after the close. Each run commits the

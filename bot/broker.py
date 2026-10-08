@@ -108,9 +108,14 @@ class AlpacaBroker:
             bars = self.data.get_stock_bars(StockBarsRequest(
                 symbol_or_symbols=chunk, timeframe=TimeFrame.Day,
                 start=start, end=end, feed=DataFeed.SIP))
+            from zoneinfo import ZoneInfo
+            today_et = datetime.now(ZoneInfo("America/New_York")).date().isoformat()
             for s, rows in bars.data.items():
-                out[s] = [{"date": _iso(b.timestamp.date()), "close": float(b.close),
-                           "volume": float(b.volume)} for b in rows][-days:]
+                # completed sessions only: today's partial bar would make "1-day change" read 0%
+                done = [b for b in rows
+                        if _iso(b.timestamp.astimezone(ZoneInfo("America/New_York")).date()) < today_et]
+                out[s] = [{"date": _iso(b.timestamp.astimezone(ZoneInfo("America/New_York")).date()),
+                           "close": float(b.close), "volume": float(b.volume)} for b in done][-days:]
         return out
 
     def news(self, symbols: list, hours: int = 24, limit: int = 40) -> list:

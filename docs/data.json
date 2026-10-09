@@ -58,9 +58,15 @@
    "name": "Claude's pick",
    "level": 2,
    "ai_cost": 0.0439,
-   "positions": {},
-   "cash": 180.11,
-   "penalty_paid": 0.0
+   "positions": {
+    "META": {
+     "qty": 0.2226,
+     "cost_basis": 160.05666,
+     "reserved_qty": 0.0
+    }
+   },
+   "cash": 179.99,
+   "penalty_paid": 0.1212
   }
  },
  "benchmark": "SPY",
@@ -77,12 +83,12 @@
   },
   {
    "date": "2026-10-09",
-   "A": 495.7532,
-   "B": 499.5872,
+   "A": 500.7759,
+   "B": 500.0166,
    "C": 499.969,
    "D": 499.9809,
-   "E": 499.9561,
-   "SPY": 500.345
+   "E": 499.8008,
+   "SPY": 501.9441
   }
  ],
  "weekly": [],
@@ -431,6 +437,18 @@
     "input_tokens": 3685,
     "output_tokens": 680
    }
+  },
+  {
+   "ts": "2026-10-09T18:45:16+00:00",
+   "kind": "fill",
+   "strategy": "E",
+   "symbol": "META",
+   "order_id": "f7960553-e183-495a-9880-2d056d8a7683",
+   "fill_price": 718.488,
+   "side": "buy",
+   "qty": 0.2226,
+   "eff_price": 719.0326139040001,
+   "cost": 160.0566598550304
   }
  ],
  "spend": {

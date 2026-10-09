@@ -3,21 +3,21 @@
   "A": {
    "name": "Momentum",
    "level": 2,
-   "ai_cost": 0.0169,
+   "ai_cost": 0.0232,
    "positions": {
-    "PLTR": {
-     "qty": 0.8312,
-     "cost_basis": 164.723092,
+    "AMD": {
+     "cost_basis": 149.815794,
+     "qty": 0.2362,
      "reserved_qty": 0.0
     },
     "META": {
-     "qty": 0.2291,
      "cost_basis": 165.488858,
+     "qty": 0.2291,
      "reserved_qty": 0.0
     },
-    "AMD": {
-     "qty": 0.2362,
-     "cost_basis": 149.815794,
+    "PLTR": {
+     "cost_basis": 164.723092,
+     "qty": 0.8312,
      "reserved_qty": 0.0
     }
    },
@@ -27,11 +27,11 @@
   "B": {
    "name": "Mean reversion",
    "level": 2,
-   "ai_cost": 0.0154,
+   "ai_cost": 0.0228,
    "positions": {
     "CRM": {
-     "qty": 0.3146,
      "cost_basis": 71.956764,
+     "qty": 0.3146,
      "reserved_qty": 0.0
     }
    },
@@ -41,7 +41,7 @@
   "C": {
    "name": "Catalyst reader",
    "level": 2,
-   "ai_cost": 0.0185,
+   "ai_cost": 0.031,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -49,7 +49,7 @@
   "D": {
    "name": "Small-cap explorer",
    "level": 2,
-   "ai_cost": 0.0126,
+   "ai_cost": 0.0191,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -57,9 +57,9 @@
   "E": {
    "name": "Claude's pick",
    "level": 2,
-   "ai_cost": 0.0297,
+   "ai_cost": 0.0439,
    "positions": {},
-   "cash": 180.02,
+   "cash": 180.11,
    "penalty_paid": 0.0
   }
  },
@@ -67,13 +67,22 @@
  "started": "2026-10-08",
  "equity": [
   {
-   "date": "2026-10-08",
    "A": 494.9587,
    "B": 499.3854,
    "C": 499.9815,
    "D": 499.9874,
    "E": 499.9703,
-   "SPY": 498.6362
+   "SPY": 498.6362,
+   "date": "2026-10-08"
+  },
+  {
+   "date": "2026-10-09",
+   "A": 495.7532,
+   "B": 499.5872,
+   "C": 499.969,
+   "D": 499.9809,
+   "E": 499.9561,
+   "SPY": 500.345
   }
  ],
  "weekly": [],
@@ -320,19 +329,121 @@
     "input_tokens": 3492,
     "output_tokens": 789
    }
+  },
+  {
+   "ts": "2026-10-09T14:07:15+00:00",
+   "kind": "order_closed",
+   "strategy": "E",
+   "symbol": "META",
+   "order_id": "fe947c8e-febd-4c75-969a-be503db07c41",
+   "status": "expired",
+   "filled_qty": 0.0
+  },
+  {
+   "ts": "2026-10-09T14:07:16+00:00",
+   "kind": "order_closed",
+   "strategy": "E",
+   "symbol": "MSFT",
+   "order_id": "dd93e219-1251-44b1-bcab-8713db89f736",
+   "status": "expired",
+   "filled_qty": 0.0
+  },
+  {
+   "ts": "2026-10-09T14:07:20+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding AMD, META and PLTR. All three are still well above their 50-day averages, I have only about $20 of cash, and there's no reason to churn positions I bought yesterday.",
+   "orders": [],
+   "cost": 0.00637,
+   "usage": {
+    "input_tokens": 2537,
+    "output_tokens": 130
+   }
+  },
+  {
+   "ts": "2026-10-09T14:07:23+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding the small CRM position. VZ and T both fell about 8% in one day, which looks like sector news rather than noise, and INTC's drop is still unexplained, so I'm staying mostly in cash.",
+   "orders": [],
+   "cost": 0.00749,
+   "usage": {
+    "input_tokens": 2443,
+    "output_tokens": 260
+   }
+  },
+  {
+   "ts": "2026-10-09T14:07:27+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "The telecom selloff on SpaceX competition fears (T -8.9%, VZ -7.9%) might be an overreaction. It's a structural narrative that could keep pushing prices down, and I don't have an edge, so I'm holding.",
+   "orders": [],
+   "cost": 0.01251,
+   "usage": {
+    "input_tokens": 4295,
+    "output_tokens": 392
+   }
+  },
+  {
+   "ts": "2026-10-09T14:07:30+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Only VEEA (+51%, tight spread) is tradable, but chasing a one-day spike has no clear edge over costs, so I'm holding.",
+   "orders": [],
+   "cost": 0.0065,
+   "usage": {
+    "input_tokens": 2650,
+    "output_tokens": 120
+   }
+  },
+  {
+   "ts": "2026-10-09T14:07:36+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Yesterday's META and MSFT buys expired unfilled, so I'm re-placing them with limits near the last price to start the momentum book.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "META",
+     "amount_usd": 160,
+     "limit_price": 718.5,
+     "confidence": 6,
+     "reasoning": "Yesterday's buy expired unfilled; META is above a rising 50d MA, with a flat-to-down 5d move (a mild pullback), so this is a good entry for a two-thirds slot.",
+     "result": "placed buy 0.2226 @ 718.5"
+    },
+    {
+     "action": "buy",
+     "symbol": "MSFT",
+     "amount_usd": 160,
+     "limit_price": 526.0,
+     "confidence": 6,
+     "reasoning": "MSFT has strong 60d momentum and sits above its 50d MA. It's up 1.2% today, so I'm bidding slightly under the last price instead of chasing.",
+     "result": "placed buy 0.3041 @ 526.0"
+    }
+   ],
+   "cost": 0.01417,
+   "usage": {
+    "input_tokens": 3685,
+    "output_tokens": 680
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.016874,
-    "B": 0.015352,
-    "C": 0.018476,
-    "D": 0.01257,
-    "E": 0.059506
+    "A": 0.023248,
+    "B": 0.022838,
+    "C": 0.030986,
+    "D": 0.01907,
+    "E": 0.073676
    },
-   "calls": 11,
-   "total": 0.122778
+   "calls": 16,
+   "total": 0.169818
   }
  },
  "budget": {

@@ -1,22 +1,23 @@
 # Strategy D notes: Small-cap explorer
 
-Identity: find tradable small-cap opportunities that SPY doesn't capture. Sitting in cash means we lose to SPY whenever the market rises (week 1: 0.00% vs SPY +0.68%). Being careful is fine, but holding cash forever is not a strategy.
+Identity: find tradable small-cap opportunities that SPY doesn't capture. Record so far: zero trades, -0.01% since start vs SPY +0.41%. Holding cash loses to SPY whenever the market rises. Two weeks of "no edge, hold" is the failure mode to fix now.
 
-## Screening (do this before deciding "hold")
-- Ignore warrants (W/WS), units (U), rights (R) and anything under ~$0.50 straight away. Don't let them fill up the review.
-- If the top-% mover list is all junk, look further down: small caps up or down 3–15% with real volume (a 1%-of-volume cap still large enough for our position size) and spreads ≤1–2%.
-- Prefer: a second day of follow-through after a news catalyst (earnings, FDA, contract), pullbacks to support in names that already made a clean move, and sector moves where several small caps are rising together.
-- Avoid chasing one-day spikes of +30% or more. Skipping VEEA at +51% was the right call.
+## Screening (required before any "hold")
+- Drop warrants (W/WS), units (U), rights (R) and anything under ~$0.50 straight away. Don't comment on them.
+- The top-% mover list is only a starting point. Most of it is junk. Go further down to names moving ±3–15% with real volume (a 1%-of-volume cap still covers our size) and spreads ≤1.5%.
+- Every hold decision must name the top 2–3 liquid candidates and give the specific reason each one failed. "Movers are junk" is not a reason to hold.
+- Prefer: day-2 follow-through after a catalyst (earnings, FDA, contract), pullbacks to support after a clean move, and sector moves where several small caps rise together.
+- Avoid one-day spikes of +30% or more (skipping VEEA at +51% was fine).
 
 ## Entry and sizing
-- When a liquid name passes the screen with a plausible 3–5x-spread move, take a small starter position (confidence 5–6) rather than holding.
-- Aim for at least one well-reasoned position on most weeks. Keep 2–3 positions max, so that no single name dominates.
-- Use limit orders at or near the mid. If the order doesn't fill, let it go rather than chasing.
-- Avoid spreads wider than ~3%. Prefer spreads under 1.5%.
+- If a liquid name passes the screen with a plausible move of 3–5x its spread, buy a small starter (confidence 5–6). A starter doesn't need certainty. It needs a defined thesis and a defined exit.
+- Target: at least one position open by the end of the second session each week. Max 2–3 names.
+- Fallback: if by the second session no single name qualifies and a small-cap ETF (e.g., IWM) is allowed, hold a modest position in it (confidence 5) instead of all cash. Swap it out when a real setup appears.
+- Use limit orders at or near the mid. Don't chase unfilled orders.
 
 ## Exits
-- Decide the exit before buying: take profit at about 2–3x the expected-move target, and cut if the setup's thesis breaks (for example, the catalyst is faded and the stock falls back below the breakout level).
-- Don't hold through a big binary event unless that event is the thesis.
+- Set the exit before buying: take profit at about 2–3x the expected move, and cut when the thesis breaks (catalyst fades, price falls back below the breakout level).
+- Don't hold through binary events unless the event is the thesis.
 
 ## Confidence
-- No data yet. Tournament-wide, 1–7 confidence buys have been slightly positive. Use 5–6 for normal setups and save 8+ for clear catalyst plus liquidity plus a clean chart.
+- Still no data from our own trades. Tournament-wide, buys at confidence 1–7 have been slightly positive (n=5). Use 5–6 as the default. Save 8+ for setups with a catalyst, good liquidity and a clean chart.

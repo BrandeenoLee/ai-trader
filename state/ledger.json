@@ -16,11 +16,11 @@
       "date": "2026-10-08"
     },
     {
-      "A": 501.658,
-      "B": 500.0984,
-      "C": 499.969,
-      "D": 499.9809,
-      "E": 499.753,
+      "A": 501.6266,
+      "B": 500.0668,
+      "C": 499.9375,
+      "D": 499.9503,
+      "E": 499.7131,
       "SPY": 502.0408,
       "date": "2026-10-09"
     }
@@ -28,9 +28,9 @@
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.05462,
+      "ai_cost": 0.09066,
       "cash": 19.972256,
-      "checkin_level": 3,
+      "checkin_level": 4,
       "penalty_paid": 0.92101,
       "pending_orders": [],
       "positions": {
@@ -56,7 +56,7 @@
       "unsettled": []
     },
     "B": {
-      "ai_cost": 0.054406,
+      "ai_cost": 0.09367,
       "cash": 428.043236,
       "checkin_level": 1,
       "penalty_paid": 1.96141,
@@ -74,7 +74,7 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.06245,
+      "ai_cost": 0.098814,
       "cash": 500.0,
       "checkin_level": 1,
       "penalty_paid": 0.0,
@@ -86,7 +86,7 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.049698,
+      "ai_cost": 0.088378,
       "cash": 500.0,
       "checkin_level": 1,
       "penalty_paid": 0.0,
@@ -98,7 +98,7 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.083832,
+      "ai_cost": 0.122204,
       "cash": 339.94334,
       "checkin_level": 1,
       "penalty_paid": 0.121231,

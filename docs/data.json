@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 4,
-   "ai_cost": 0.0907,
+   "ai_cost": 0.0983,
    "positions": {
     "AMD": {
      "cost_basis": 149.815794,
@@ -27,7 +27,7 @@
   "B": {
    "name": "Mean reversion",
    "level": 1,
-   "ai_cost": 0.0937,
+   "ai_cost": 0.106,
    "positions": {
     "CRM": {
      "cost_basis": 71.956764,
@@ -35,21 +35,21 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 428.04,
+   "cash": 358.05,
    "penalty_paid": 1.9614
   },
   "C": {
    "name": "Catalyst reader",
    "level": 1,
-   "ai_cost": 0.0988,
+   "ai_cost": 0.1162,
    "positions": {},
-   "cash": 500.0,
+   "cash": 410.01,
    "penalty_paid": 0.0
   },
   "D": {
    "name": "Small-cap explorer",
    "level": 1,
-   "ai_cost": 0.0884,
+   "ai_cost": 0.0999,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -57,7 +57,7 @@
   "E": {
    "name": "Claude's pick",
    "level": 1,
-   "ai_cost": 0.1222,
+   "ai_cost": 0.138,
    "positions": {
     "META": {
      "cost_basis": 160.05666,
@@ -65,7 +65,7 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 339.94,
+   "cash": 55.03,
    "penalty_paid": 0.1212
   }
  },
@@ -82,13 +82,22 @@
    "date": "2026-10-08"
   },
   {
-   "date": "2026-10-09",
    "A": 501.6266,
    "B": 500.0668,
    "C": 499.9375,
    "D": 499.9503,
    "E": 499.7131,
-   "SPY": 502.0408
+   "SPY": 502.0408,
+   "date": "2026-10-09"
+  },
+  {
+   "date": "2026-10-14",
+   "A": 491.0757,
+   "B": 502.2678,
+   "C": 499.8838,
+   "D": 499.9001,
+   "E": 503.7224,
+   "SPY": 494.9287
   }
  ],
  "weekly": [
@@ -716,19 +725,123 @@
    "self_assessment": "-0.05% vs SPY +0.68%: about 68% sat in cash after MSFT under-bids expired twice. Next week: fill orders and sweep the cash into QQQ.",
    "confidence_beat_spy": 4,
    "cost": 0.03837
+  },
+  {
+   "ts": "2026-10-14T17:56:32+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 4/day",
+   "summary": "Holding all three: AMD, META and PLTR are still above their 50-day averages with positive 20-day returns, so no exit rule has triggered despite today's market dip.",
+   "orders": [],
+   "cost": 0.00763,
+   "usage": {
+    "input_tokens": 3185,
+    "output_tokens": 126
+   }
+  },
+  {
+   "ts": "2026-10-14T17:56:37+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "Holding CRM (+3.3%, still short of the ~240 target) and adding a small NVDA dip buy, since its 60d trend is intact in a sector-wide semis selloff.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "NVDA",
+     "amount_usd": 70,
+     "limit_price": 221.0,
+     "confidence": 4,
+     "reasoning": "NVDA is a liquid large cap, down 7% in 5 days in a broad semis/tech selloff (SMH -9.6%). The 60d trend is still positive (+6.5%) and price is about at its 50d MA. I'm sizing small because the selloff is still active and I have no specific news.",
+     "result": "placed buy 0.3167 @ 221.0"
+    }
+   ],
+   "cost": 0.01235,
+   "usage": {
+    "input_tokens": 3156,
+    "output_tokens": 604
+   }
+  },
+  {
+   "ts": "2026-10-14T17:56:45+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "Best setup is the semiconductor selloff on hot CPI, which looks like an overreaction given ASML and Dell's bullish demand and pricing commentary, so I'm buying a small SMH starter.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "SMH",
+     "limit_price": 566,
+     "amount_usd": 90,
+     "confidence": 5,
+     "reasoning": "Semis are down about 10% in 5 days and 7 straight sessions. The drivers are a hot CPI print and rate fears, and the company news points the other way: ASML cites AI pricing power and Dell warns of a multi-year memory shortage. That looks like a macro-driven overreaction in the sector, so I'm taking a small starter position and not chasing single names.",
+     "result": "placed buy 0.159 @ 566.0"
+    }
+   ],
+   "cost": 0.01737,
+   "usage": {
+    "input_tokens": 4578,
+    "output_tokens": 821
+   }
+  },
+  {
+   "ts": "2026-10-14T17:56:50+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "Holding: the liquid candidates are all one-day spikes of 30% or more. I'm not buying IWM as a fallback because I can't see its price to set a valid limit.",
+   "orders": [],
+   "cost": 0.01148,
+   "usage": {
+    "input_tokens": 3365,
+    "output_tokens": 475
+   }
+  },
+  {
+   "ts": "2026-10-14T17:56:57+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "Cash is 67% and the market is down today, but the rules say to stay invested. I'm adding MSFT as the second stock and sweeping the rest into QQQ, which leaves about 10% cash.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "MSFT",
+     "amount_usd": 110,
+     "limit_price": 536.5,
+     "confidence": 6,
+     "reasoning": "MSFT is 6.4% above its 50-day average, so it qualifies as a second leader. Limit is last +0.25% so it fills.",
+     "result": "placed buy 0.205 @ 536.5"
+    },
+    {
+     "action": "buy",
+     "symbol": "QQQ",
+     "amount_usd": 175,
+     "limit_price": 729.5,
+     "confidence": 6,
+     "reasoning": "Mandatory cash sweep per the notes. Cash was far above 10%, so the rest goes into the QQQ core at last +0.2%.",
+     "result": "placed buy 0.2398 @ 729.5"
+    }
+   ],
+   "cost": 0.01577,
+   "usage": {
+    "input_tokens": 3826,
+    "output_tokens": 812
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.09066,
-    "B": 0.09367,
-    "C": 0.098814,
-    "D": 0.088378,
-    "E": 0.15196
+    "A": 0.09829,
+    "B": 0.106022,
+    "C": 0.11618,
+    "D": 0.099858,
+    "E": 0.167732
    },
-   "calls": 26,
-   "total": 0.523482
+   "calls": 31,
+   "total": 0.588082
   }
  },
  "budget": {

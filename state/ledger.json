@@ -43,21 +43,21 @@
       "date": "2026-10-15"
     },
     {
-      "A": 463.4754,
-      "B": 502.2621,
-      "C": 496.5565,
+      "A": 464.0119,
+      "B": 501.4541,
+      "C": 495.7679,
       "D": 499.8778,
-      "E": 491.2959,
-      "SPY": 491.9174,
+      "E": 492.0058,
+      "SPY": 492.1818,
       "date": "2026-10-16"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.122652,
+      "ai_cost": 0.163052,
       "cash": 19.972256,
-      "checkin_level": 4,
+      "checkin_level": 3,
       "penalty_paid": 2.930688,
       "pending_orders": [],
       "positions": {
@@ -83,34 +83,26 @@
       ]
     },
     "B": {
-      "ai_cost": 0.13029,
-      "cash": 288.13311,
-      "checkin_level": 1,
-      "penalty_paid": 2.921337,
-      "pending_orders": [
-        {
-          "client_id": "B-64b2bb495a24",
-          "confidence": 4,
-          "limit_price": 352.5,
-          "order_id": "925bf147-4d2c-4e81-a4c3-f202ae6c41d3",
-          "penalty_pct": 0.012567,
-          "qty": 0.1985,
-          "reserved_cash": 69.97125,
-          "side": "buy",
-          "submitted": "2026-10-16T13:19:31.002210-04:00",
-          "symbol": "TSLA"
-        }
-      ],
+      "ai_cost": 0.174418,
+      "cash": 287.488141,
+      "checkin_level": 2,
+      "penalty_paid": 3.797757,
+      "pending_orders": [],
       "positions": {
         "NVDA": {
           "cost_basis": 69.938876,
           "qty": 0.3167,
           "reserved_qty": 0.0
+        },
+        "TSLA": {
+          "cost_basis": 70.616219,
+          "qty": 0.1985,
+          "reserved_qty": 0.0
         }
       },
       "realized_pnl": 4.205957,
-      "reserved": 69.97125,
-      "trades": 3,
+      "reserved": 0.0,
+      "trades": 4,
       "unsettled": [
         {
           "amount": 76.162721,
@@ -119,9 +111,9 @@
       ]
     },
     "C": {
-      "ai_cost": 0.145388,
+      "ai_cost": 0.186268,
       "cash": 410.078722,
-      "checkin_level": 1,
+      "checkin_level": 2,
       "penalty_paid": 0.044938,
       "pending_orders": [],
       "positions": {
@@ -137,9 +129,9 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.122208,
+      "ai_cost": 0.161624,
       "cash": 500.0,
-      "checkin_level": 1,
+      "checkin_level": 2,
       "penalty_paid": 0.0,
       "pending_orders": [],
       "positions": {},
@@ -149,9 +141,9 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.161188,
+      "ai_cost": 0.204772,
       "cash": 55.501238,
-      "checkin_level": 1,
+      "checkin_level": 2,
       "penalty_paid": 0.263381,
       "pending_orders": [],
       "positions": {

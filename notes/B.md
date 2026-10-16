@@ -2,22 +2,23 @@
 
 ## Entry setup (core, unchanged)
 - Look for liquid names with a sharp 5-day drop that is large for their volatility (about 2x their normal 5-day move or more), while the 60-day trend is still intact and price is near or above its 50d MA.
-- Skip drops caused by clear bad news: earnings misses, guidance cuts, or sector-wide regulatory or pricing shocks (e.g. VZ/T -8% in one day on 10/09).
-- An unexplained drop is not an automatic skip. Check for news first. If none turns up and the trend is intact, take a small position instead of deferring again (INTC was passed over twice without a news check).
+- Skip drops caused by clear bad news: earnings misses, guidance cuts, or sector-wide regulatory or pricing shocks.
+- An unexplained drop is not an automatic skip. Check for news. If none turns up and the trend is intact, take a small position.
+- During an active broad selloff, scale in. Start small, and add only after the selloff stabilizes (one up day or the 5-day drop stops getting worse). Don't catch every falling name.
 
 ## Sizing and cash
-- Holding one ~$72 position with the rest in cash lags SPY in up weeks (+0.14% vs +0.68%). Target 2-4 positions in uncorrelated dips (different sectors) when setups exist, with about 40-60% of the account invested.
-- If no setup qualifies, cash is fine. Don't force trades that break the entry rules.
-- Spread costs are heavy ($1.96 so far, about 0.4% of the account). Prefer large, tight-spread names. Make each position big enough that the spread is a small share of it, and don't trade in and out.
+- Target 2-4 positions in dips from different sectors, with about 40-60% of the account invested when setups exist. Cash is fine when nothing qualifies.
+- NVDA and TSLA are both high-beta tech and move together. Count them as one correlated bet. Any next entry should come from outside tech or semis (e.g. financials, healthcare, staples, industrials).
+- Spread costs are now $3.80, about 0.76% of the account and nearly half of this week's CRM gain. Use large, tight-spread names only. Keep each position at least ~$70. Don't make round trips that are smaller than the expected bounce.
 
 ## Orders
-- Place limits close to the current price.
-- Check every fill against its limit. The CRM buy (limit 222.5) filled at 228.72, which is above the limit and should be impossible. Treat it as an execution or data anomaly, and mention any repeat in the decision reasoning.
+- Place limits close to the current price, and check every fill against its limit.
+- Fills above the limit have happened twice: CRM (limit 222.5, filled 228.72) and TSLA (limit 352.5, filled 355.75). Assume buys can fill up to ~1-3% worse than the limit and size for that. Mention any further anomaly in the decision reasoning.
 
-## Exits (CRM: fill 228.72, entered 10/08)
-- Take profit when the price gets back to about the pre-drop level (roughly +5%, ~240 for CRM).
-- Cut at about -5% from the fill price (~217 for CRM), or right away if bad news comes out.
-- Time stop: no bounce within about 10 trading days (CRM by ~10/22) means exit and recycle the cash.
+## Exits (open positions)
+- NVDA (fill 220.84, 10/15): take profit ~232 (+5%), stop ~210 (-5%), time stop ~10/29.
+- TSLA (fill 355.75, 10/16): take profit ~373 (+5%), stop ~338 (-5%), time stop ~10/30.
+- Same rules for new positions: take profit near the pre-drop level (~+5%), cut at -5% or right away on bad news, and exit after ~10 trading days with no bounce. CRM followed these rules and made +4.21 (+5.8%).
 
 ## Confidence
-- Tournament data so far: conf 1-4 averaged +0.17% (1 buy) and conf 5-7 averaged +0.13% (4 buys). That's too few trades to show any calibration. Keep confidence honest, use the middle of the range for textbook setups, and don't inflate it to get bigger size.
+- Tournament data: conf 1-4 averaged +0.70% (3 buys) and conf 5-7 averaged -4.68% (7 buys). The sample is small, but higher stated confidence has not done better. Keep dip buys in active selloffs at conf ≤4. Only use 5-6 for a textbook setup after the selloff has stabilized and the news check came up clean.

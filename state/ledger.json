@@ -41,34 +41,26 @@
       "E": 502.5557,
       "SPY": 496.2118,
       "date": "2026-10-15"
+    },
+    {
+      "A": 463.4754,
+      "B": 502.2621,
+      "C": 496.5565,
+      "D": 499.8778,
+      "E": 491.2959,
+      "SPY": 491.9174,
+      "date": "2026-10-16"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.113552,
+      "ai_cost": 0.122652,
       "cash": 19.972256,
       "checkin_level": 4,
-      "penalty_paid": 0.92101,
-      "pending_orders": [
-        {
-          "client_id": "A-0d090d00712b",
-          "confidence": 5,
-          "limit_price": 544.5,
-          "order_id": "16a0ca32-84b3-457b-884b-3faffba7745b",
-          "penalty_pct": 0.015577,
-          "qty": 0.2362,
-          "side": "sell",
-          "submitted": "2026-10-15T13:43:33.491291-04:00",
-          "symbol": "AMD"
-        }
-      ],
+      "penalty_paid": 2.930688,
+      "pending_orders": [],
       "positions": {
-        "AMD": {
-          "cost_basis": 149.815794,
-          "qty": 0.2362,
-          "reserved_qty": 0.2362
-        },
         "META": {
           "cost_basis": 165.488858,
           "qty": 0.2291,
@@ -80,48 +72,54 @@
           "reserved_qty": 0.0
         }
       },
-      "realized_pnl": 0.0,
+      "realized_pnl": -22.809725,
       "reserved": 0.0,
-      "trades": 3,
-      "unsettled": []
+      "trades": 4,
+      "unsettled": [
+        {
+          "amount": 127.006069,
+          "settles": "2026-10-19"
+        }
+      ]
     },
     "B": {
-      "ai_cost": 0.116366,
-      "cash": 358.10436,
+      "ai_cost": 0.13029,
+      "cash": 288.13311,
       "checkin_level": 1,
-      "penalty_paid": 1.996362,
+      "penalty_paid": 2.921337,
       "pending_orders": [
         {
-          "client_id": "B-b5227e6e9ade",
-          "confidence": 6,
-          "limit_price": 244.5,
-          "order_id": "f0705ffd-fbfd-4cf2-a41c-bb68b9117f10",
-          "penalty_pct": 0.011999,
-          "qty": 0.3146,
-          "side": "sell",
-          "submitted": "2026-10-15T13:43:33.491291-04:00",
-          "symbol": "CRM"
+          "client_id": "B-64b2bb495a24",
+          "confidence": 4,
+          "limit_price": 352.5,
+          "order_id": "925bf147-4d2c-4e81-a4c3-f202ae6c41d3",
+          "penalty_pct": 0.012567,
+          "qty": 0.1985,
+          "reserved_cash": 69.97125,
+          "side": "buy",
+          "submitted": "2026-10-16T13:19:31.002210-04:00",
+          "symbol": "TSLA"
         }
       ],
       "positions": {
-        "CRM": {
-          "cost_basis": 71.956764,
-          "qty": 0.3146,
-          "reserved_qty": 0.3146
-        },
         "NVDA": {
           "cost_basis": 69.938876,
           "qty": 0.3167,
           "reserved_qty": 0.0
         }
       },
-      "realized_pnl": 0.0,
-      "reserved": 0.0,
-      "trades": 2,
-      "unsettled": []
+      "realized_pnl": 4.205957,
+      "reserved": 69.97125,
+      "trades": 3,
+      "unsettled": [
+        {
+          "amount": 76.162721,
+          "settles": "2026-10-19"
+        }
+      ]
     },
     "C": {
-      "ai_cost": 0.131606,
+      "ai_cost": 0.145388,
       "cash": 410.078722,
       "checkin_level": 1,
       "penalty_paid": 0.044938,
@@ -139,7 +137,7 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.111404,
+      "ai_cost": 0.122208,
       "cash": 500.0,
       "checkin_level": 1,
       "penalty_paid": 0.0,
@@ -151,7 +149,7 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.14911,
+      "ai_cost": 0.161188,
       "cash": 55.501238,
       "checkin_level": 1,
       "penalty_paid": 0.263381,

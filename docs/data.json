@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 3,
-   "ai_cost": 0.1631,
+   "ai_cost": 0.1754,
    "positions": {
     "META": {
      "cost_basis": 165.488858,
@@ -16,13 +16,13 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 19.97,
+   "cash": 36.99,
    "penalty_paid": 2.9307
   },
   "B": {
    "name": "Mean reversion",
    "level": 2,
-   "ai_cost": 0.1744,
+   "ai_cost": 0.183,
    "positions": {
     "NVDA": {
      "cost_basis": 69.938876,
@@ -30,18 +30,18 @@
      "reserved_qty": 0.0
     },
     "TSLA": {
-     "qty": 0.1985,
      "cost_basis": 70.616219,
+     "qty": 0.1985,
      "reserved_qty": 0.0
     }
    },
-   "cash": 287.49,
+   "cash": 363.65,
    "penalty_paid": 3.7978
   },
   "C": {
    "name": "Catalyst reader",
    "level": 2,
-   "ai_cost": 0.1863,
+   "ai_cost": 0.2005,
    "positions": {
     "SMH": {
      "cost_basis": 89.921278,
@@ -55,7 +55,7 @@
   "D": {
    "name": "Small-cap explorer",
    "level": 2,
-   "ai_cost": 0.1616,
+   "ai_cost": 0.1709,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -63,7 +63,7 @@
   "E": {
    "name": "Claude's pick",
    "level": 2,
-   "ai_cost": 0.2048,
+   "ai_cost": 0.2165,
    "positions": {
     "META": {
      "cost_basis": 160.05666,
@@ -125,13 +125,22 @@
    "date": "2026-10-15"
   },
   {
-   "date": "2026-10-16",
    "A": 464.0119,
    "B": 501.4541,
    "C": 495.7679,
    "D": 499.8778,
    "E": 492.0058,
-   "SPY": 492.1818
+   "SPY": 492.1818,
+   "date": "2026-10-16"
+  },
+  {
+   "date": "2026-10-19",
+   "A": 470.0985,
+   "B": 505.5249,
+   "C": 497.2344,
+   "D": 499.8291,
+   "E": 494.4043,
+   "SPY": 495.0641
   }
  ],
  "weekly": [
@@ -1245,19 +1254,94 @@
    "self_assessment": "Fully invested in META/MSFT/QQQ, beat SPY by 0.4% this week and now level since start; I tightened the exits to avoid whipsaw selling of the QQQ core.",
    "confidence_beat_spy": 4,
    "cost": 0.04358
+  },
+  {
+   "ts": "2026-10-19T19:14:31+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Redeploying settled cash into Visa, a non-tech momentum leader, while holding META and PLTR above their stops.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "V",
+     "amount_usd": 110,
+     "limit_price": 404.5,
+     "confidence": 5,
+     "reasoning": "V has positive 20d (+9.1%) and 60d (+13.4%) returns, sits 8.3% above its 50d average (not extended), and has no spike. It diversifies away from the tech cluster I already hold.",
+     "result": "placed buy 0.2719 @ 404.5"
+    }
+   ],
+   "cost": 0.01238,
+   "usage": {
+    "input_tokens": 3379,
+    "output_tokens": 562
+   }
+  },
+  {
+   "ts": "2026-10-19T19:14:33+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding NVDA and TSLA with their exit rules unchanged. The other big drops (BAC, CAT, GS) have broken 60-day trends, and META and PLTR don't look clean enough, so I'm staying mostly in cash.",
+   "orders": [],
+   "cost": 0.00862,
+   "usage": {
+    "input_tokens": 3562,
+    "output_tokens": 150
+   }
+  },
+  {
+   "ts": "2026-10-19T19:14:37+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding the SMH starter: chips are bouncing today (NVDA +1.5%, AVGO +1.9%, \"AI chip rout reverses\"), which meets my green-session test. I'm not adding, and I'll exit if the bounce fails or the AI-financing news worsens.",
+   "orders": [],
+   "cost": 0.01428,
+   "usage": {
+    "input_tokens": 5203,
+    "output_tokens": 387
+   }
+  },
+  {
+   "ts": "2026-10-19T19:14:41+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding: the list has no names moving 3\u201315%. Everything is a spike or crash of 30% or more, a warrant, or has a wide spread (FUFU 1.5% spread but only $0.14M daily volume, EXYN $0.17M volume), so nothing clears trading costs.",
+   "orders": [],
+   "cost": 0.00924,
+   "usage": {
+    "input_tokens": 3624,
+    "output_tokens": 199
+   }
+  },
+  {
+   "ts": "2026-10-19T19:14:44+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "No exit rule has fired: META is 1.9% below entry and MSFT is 0.2% below, against an 8% stop. QQQ has no 50-day exit. Cash is about 11%, so the sweep would be only about $6, which isn't worth the spread. I'm holding.",
+   "orders": [],
+   "cost": 0.01172,
+   "usage": {
+    "input_tokens": 4198,
+    "output_tokens": 332
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.163052,
-    "B": 0.174418,
-    "C": 0.186268,
-    "D": 0.161624,
-    "E": 0.234528
+    "A": 0.17543,
+    "B": 0.183042,
+    "C": 0.200544,
+    "D": 0.170862,
+    "E": 0.246244
    },
-   "calls": 46,
-   "total": 0.91989
+   "calls": 51,
+   "total": 0.976122
   }
  },
  "budget": {

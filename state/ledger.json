@@ -50,16 +50,38 @@
       "E": 492.0058,
       "SPY": 492.1818,
       "date": "2026-10-16"
+    },
+    {
+      "A": 470.0985,
+      "B": 505.5249,
+      "C": 497.2344,
+      "D": 499.8291,
+      "E": 494.4043,
+      "SPY": 495.0641,
+      "date": "2026-10-19"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.163052,
-      "cash": 19.972256,
+      "ai_cost": 0.17543,
+      "cash": 36.994775,
       "checkin_level": 3,
       "penalty_paid": 2.930688,
-      "pending_orders": [],
+      "pending_orders": [
+        {
+          "client_id": "A-743d2c257512",
+          "confidence": 5,
+          "limit_price": 404.5,
+          "order_id": "7cb47ab0-98ef-4309-b828-bb451ff472ac",
+          "penalty_pct": 0.0005,
+          "qty": 0.2719,
+          "reserved_cash": 109.98355,
+          "side": "buy",
+          "submitted": "2026-10-19T15:14:24.862681-04:00",
+          "symbol": "V"
+        }
+      ],
       "positions": {
         "META": {
           "cost_basis": 165.488858,
@@ -73,18 +95,13 @@
         }
       },
       "realized_pnl": -22.809725,
-      "reserved": 0.0,
+      "reserved": 109.98355,
       "trades": 4,
-      "unsettled": [
-        {
-          "amount": 127.006069,
-          "settles": "2026-10-19"
-        }
-      ]
+      "unsettled": []
     },
     "B": {
-      "ai_cost": 0.174418,
-      "cash": 287.488141,
+      "ai_cost": 0.183042,
+      "cash": 363.650862,
       "checkin_level": 2,
       "penalty_paid": 3.797757,
       "pending_orders": [],
@@ -103,15 +120,10 @@
       "realized_pnl": 4.205957,
       "reserved": 0.0,
       "trades": 4,
-      "unsettled": [
-        {
-          "amount": 76.162721,
-          "settles": "2026-10-19"
-        }
-      ]
+      "unsettled": []
     },
     "C": {
-      "ai_cost": 0.186268,
+      "ai_cost": 0.200544,
       "cash": 410.078722,
       "checkin_level": 2,
       "penalty_paid": 0.044938,
@@ -129,7 +141,7 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.161624,
+      "ai_cost": 0.170862,
       "cash": 500.0,
       "checkin_level": 2,
       "penalty_paid": 0.0,
@@ -141,7 +153,7 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.204772,
+      "ai_cost": 0.216488,
       "cash": 55.501238,
       "checkin_level": 2,
       "penalty_paid": 0.263381,

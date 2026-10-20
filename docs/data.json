@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 3,
-   "ai_cost": 0.1754,
+   "ai_cost": 0.1845,
    "positions": {
     "META": {
      "cost_basis": 165.488858,
@@ -14,15 +14,20 @@
      "cost_basis": 164.723092,
      "qty": 0.8312,
      "reserved_qty": 0.0
+    },
+    "V": {
+     "qty": 0.2719,
+     "cost_basis": 109.759977,
+     "reserved_qty": 0.0
     }
    },
-   "cash": 36.99,
-   "penalty_paid": 2.9307
+   "cash": 37.22,
+   "penalty_paid": 2.9855
   },
   "B": {
    "name": "Mean reversion",
    "level": 2,
-   "ai_cost": 0.183,
+   "ai_cost": 0.1939,
    "positions": {
     "NVDA": {
      "cost_basis": 69.938876,
@@ -32,7 +37,7 @@
     "TSLA": {
      "cost_basis": 70.616219,
      "qty": 0.1985,
-     "reserved_qty": 0.0
+     "reserved_qty": 0.1985
     }
    },
    "cash": 363.65,
@@ -41,12 +46,12 @@
   "C": {
    "name": "Catalyst reader",
    "level": 2,
-   "ai_cost": 0.2005,
+   "ai_cost": 0.2163,
    "positions": {
     "SMH": {
      "cost_basis": 89.921278,
      "qty": 0.159,
-     "reserved_qty": 0.0
+     "reserved_qty": 0.159
     }
    },
    "cash": 410.08,
@@ -55,7 +60,7 @@
   "D": {
    "name": "Small-cap explorer",
    "level": 2,
-   "ai_cost": 0.1709,
+   "ai_cost": 0.1795,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -63,7 +68,7 @@
   "E": {
    "name": "Claude's pick",
    "level": 2,
-   "ai_cost": 0.2165,
+   "ai_cost": 0.2276,
    "positions": {
     "META": {
      "cost_basis": 160.05666,
@@ -134,13 +139,22 @@
    "date": "2026-10-16"
   },
   {
-   "date": "2026-10-19",
    "A": 470.0985,
    "B": 505.5249,
    "C": 497.2344,
    "D": 499.8291,
    "E": 494.4043,
-   "SPY": 495.0641
+   "SPY": 495.0641,
+   "date": "2026-10-19"
+  },
+  {
+   "date": "2026-10-20",
+   "A": 468.534,
+   "B": 506.6972,
+   "C": 497.3474,
+   "D": 499.8205,
+   "E": 490.8789,
+   "SPY": 496.4117
   }
  ],
  "weekly": [
@@ -1329,19 +1343,116 @@
     "input_tokens": 4198,
     "output_tokens": 332
    }
+  },
+  {
+   "ts": "2026-10-20T17:55:09+00:00",
+   "kind": "fill",
+   "strategy": "A",
+   "symbol": "V",
+   "order_id": "7cb47ab0-98ef-4309-b828-bb451ff472ac",
+   "fill_price": 403.476,
+   "side": "buy",
+   "qty": 0.2719,
+   "eff_price": 403.677738,
+   "cost": 109.75997696219999
+  },
+  {
+   "ts": "2026-10-20T17:55:15+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Holding META, PLTR and V. No stop has triggered: META is -4.3% against an 8% stop, and PLTR is -1.3%. I have only $37 of cash, and nothing ranks clearly higher to justify a rotation.",
+   "orders": [],
+   "cost": 0.00904,
+   "usage": {
+    "input_tokens": 3445,
+    "output_tokens": 215
+   }
+  },
+  {
+   "ts": "2026-10-20T17:55:19+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Taking profit on TSLA at target, holding NVDA within its stop and target range, and staying mostly in cash because no new dip setup is clean (META is still falling).\"",
+   "orders": [
+    {
+     "action": "sell",
+     "symbol": "TSLA",
+     "limit_price": 373.5,
+     "sell_fraction": 1,
+     "confidence": 6,
+     "reasoning": "TSLA hit the ~373 take-profit target (+5.3%), so I'm selling to lock in the bounce under my exit rules.",
+     "result": "placed sell 0.1985 @ 373.5"
+    }
+   ],
+   "cost": 0.01083,
+   "usage": {
+    "input_tokens": 3583,
+    "output_tokens": 366
+   }
+  },
+  {
+   "ts": "2026-10-20T17:55:24+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "The SMH overreaction thesis is not confirmed and the AI-related news is getting worse, so I'm enforcing the time stop and thesis-break exit and going back to cash.",
+   "orders": [
+    {
+     "action": "sell",
+     "symbol": "SMH",
+     "limit_price": 548.5,
+     "sell_fraction": 1.0,
+     "confidence": 5,
+     "reasoning": "Time stop has passed (more than 3 sessions since the fill) and the bounce is only +0.3%. New negative news is widening the story: an AI IPO down 32%, data-center selling on election fears, and SK Hynix down 30%. That breaks the overreaction thesis, so I'm exiting.",
+     "result": "placed sell 0.159 @ 548.5"
+    }
+   ],
+   "cost": 0.01574,
+   "usage": {
+    "input_tokens": 5195,
+    "output_tokens": 535
+   }
+  },
+  {
+   "ts": "2026-10-20T17:55:29+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Hold: no names in the 3\u201315% band appear in the list; everything is a 30%+ spike or crash, a warrant, or has a wide spread, so there is no edge over trading costs.",
+   "orders": [],
+   "cost": 0.00868,
+   "usage": {
+    "input_tokens": 3680,
+    "output_tokens": 132
+   }
+  },
+  {
+   "ts": "2026-10-20T17:55:31+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Hold. META is 3.9% below entry, against an 8% stop. MSFT is about flat, and QQQ has no 50-day exit. Cash is about 11%, so the sweep would be only about $6, which isn't worth the spread. META earnings are close, but the rules only bar opening new positions near earnings.",
+   "orders": [],
+   "cost": 0.01115,
+   "usage": {
+    "input_tokens": 4142,
+    "output_tokens": 287
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.17543,
-    "B": 0.183042,
-    "C": 0.200544,
-    "D": 0.170862,
-    "E": 0.246244
+    "A": 0.18447,
+    "B": 0.193868,
+    "C": 0.216284,
+    "D": 0.179542,
+    "E": 0.257398
    },
-   "calls": 51,
-   "total": 0.976122
+   "calls": 56,
+   "total": 1.031562
   }
  },
  "budget": {

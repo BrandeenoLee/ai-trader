@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 3,
-   "ai_cost": 0.1845,
+   "ai_cost": 0.1926,
    "positions": {
     "META": {
      "cost_basis": 165.488858,
@@ -16,8 +16,8 @@
      "reserved_qty": 0.0
     },
     "V": {
-     "qty": 0.2719,
      "cost_basis": 109.759977,
+     "qty": 0.2719,
      "reserved_qty": 0.0
     }
    },
@@ -27,40 +27,29 @@
   "B": {
    "name": "Mean reversion",
    "level": 2,
-   "ai_cost": 0.1939,
+   "ai_cost": 0.2024,
    "positions": {
     "NVDA": {
      "cost_basis": 69.938876,
      "qty": 0.3167,
      "reserved_qty": 0.0
-    },
-    "TSLA": {
-     "cost_basis": 70.616219,
-     "qty": 0.1985,
-     "reserved_qty": 0.1985
     }
    },
    "cash": 363.65,
-   "penalty_paid": 3.7978
+   "penalty_paid": 3.8349
   },
   "C": {
    "name": "Catalyst reader",
    "level": 2,
-   "ai_cost": 0.2163,
-   "positions": {
-    "SMH": {
-     "cost_basis": 89.921278,
-     "qty": 0.159,
-     "reserved_qty": 0.159
-    }
-   },
+   "ai_cost": 0.2292,
+   "positions": {},
    "cash": 410.08,
-   "penalty_paid": 0.0449
+   "penalty_paid": 0.0887
   },
   "D": {
    "name": "Small-cap explorer",
    "level": 2,
-   "ai_cost": 0.1795,
+   "ai_cost": 0.1886,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -68,7 +57,7 @@
   "E": {
    "name": "Claude's pick",
    "level": 2,
-   "ai_cost": 0.2276,
+   "ai_cost": 0.2374,
    "positions": {
     "META": {
      "cost_basis": 160.05666,
@@ -148,13 +137,22 @@
    "date": "2026-10-19"
   },
   {
-   "date": "2026-10-20",
    "A": 468.534,
    "B": 506.6972,
    "C": 497.3474,
    "D": 499.8205,
    "E": 490.8789,
-   "SPY": 496.4117
+   "SPY": 496.4117,
+   "date": "2026-10-20"
+  },
+  {
+   "date": "2026-10-21",
+   "A": 476.7185,
+   "B": 507.9667,
+   "C": 497.2704,
+   "D": 499.8114,
+   "E": 496.408,
+   "SPY": 499.0199
   }
  ],
  "weekly": [
@@ -1440,19 +1438,110 @@
     "input_tokens": 4142,
     "output_tokens": 287
    }
+  },
+  {
+   "ts": "2026-10-21T17:58:56+00:00",
+   "kind": "fill",
+   "strategy": "B",
+   "symbol": "TSLA",
+   "order_id": "7822fc00-c741-4a07-8768-188799107ba3",
+   "fill_price": 374.572,
+   "side": "sell",
+   "qty": 0.1985,
+   "eff_price": 374.38471400000003,
+   "proceeds": 74.315365729,
+   "pnl": 3.699146729000006
+  },
+  {
+   "ts": "2026-10-21T17:58:56+00:00",
+   "kind": "fill",
+   "strategy": "C",
+   "symbol": "SMH",
+   "order_id": "a30fea12-8441-4e43-858a-571fd8f9ba38",
+   "fill_price": 550.092,
+   "side": "sell",
+   "qty": 0.159,
+   "eff_price": 549.816954,
+   "proceeds": 87.42089568600001,
+   "pnl": -2.5003823139999923
+  },
+  {
+   "ts": "2026-10-21T17:58:59+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Holding META, PLTR and V: no stop or 50-day break has triggered, only $37 of cash is available, and no candidate clearly outranks them.",
+   "orders": [],
+   "cost": 0.00814,
+   "usage": {
+    "input_tokens": 3464,
+    "output_tokens": 121
+   }
+  },
+  {
+   "ts": "2026-10-21T17:59:01+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding NVDA within its stop and target range. No clean dip setup: NFLX and T have broken trends and look like bad news, and META is only mildly oversold and bouncing. Staying mostly in cash.",
+   "orders": [],
+   "cost": 0.00849,
+   "usage": {
+    "input_tokens": 3550,
+    "output_tokens": 139
+   }
+  },
+  {
+   "ts": "2026-10-21T17:59:05+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Best setup is NFLX (-4.3% at 2-year lows after a cut to key metrics). That looks like real fundamental damage in a structural downtrend, with no green-close confirmation, so I'm holding cash; the AI-trade bounce is macro-driven and not a clean single-headline catalyst.",
+   "orders": [],
+   "cost": 0.0129,
+   "usage": {
+    "input_tokens": 5044,
+    "output_tokens": 281
+   }
+  },
+  {
+   "ts": "2026-10-21T17:59:08+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Hold: no names in the 3\u201315% band appear in the list. Every mover is a spike or crash of 30% or more, a warrant or right, or has a wide spread (SDEV +34% with a 1.78% spread, AVEX -28% with a 2.72% spread), so there is no edge over trading costs.",
+   "orders": [],
+   "cost": 0.00909,
+   "usage": {
+    "input_tokens": 3688,
+    "output_tokens": 171
+   }
+  },
+  {
+   "ts": "2026-10-21T17:59:10+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding: no exit rule has fired. META is 1.4% below entry and MSFT is 0.6% below, against an 8% stop. Cash is about 11%, so a QQQ sweep isn't worth the spread.",
+   "orders": [],
+   "cost": 0.00979,
+   "usage": {
+    "input_tokens": 4181,
+    "output_tokens": 143
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.18447,
-    "B": 0.193868,
-    "C": 0.216284,
-    "D": 0.179542,
-    "E": 0.257398
+    "A": 0.192608,
+    "B": 0.202358,
+    "C": 0.229182,
+    "D": 0.188628,
+    "E": 0.26719
    },
-   "calls": 56,
-   "total": 1.031562
+   "calls": 61,
+   "total": 1.079966
   }
  },
  "budget": {

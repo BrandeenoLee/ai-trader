@@ -3,12 +3,12 @@
   "A": {
    "name": "Momentum",
    "level": 3,
-   "ai_cost": 0.1926,
+   "ai_cost": 0.2037,
    "positions": {
     "META": {
      "cost_basis": 165.488858,
      "qty": 0.2291,
-     "reserved_qty": 0.0
+     "reserved_qty": 0.2291
     },
     "PLTR": {
      "cost_basis": 164.723092,
@@ -27,7 +27,7 @@
   "B": {
    "name": "Mean reversion",
    "level": 2,
-   "ai_cost": 0.2024,
+   "ai_cost": 0.2109,
    "positions": {
     "NVDA": {
      "cost_basis": 69.938876,
@@ -35,21 +35,21 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 363.65,
+   "cash": 437.97,
    "penalty_paid": 3.8349
   },
   "C": {
    "name": "Catalyst reader",
    "level": 2,
-   "ai_cost": 0.2292,
+   "ai_cost": 0.2412,
    "positions": {},
-   "cash": 410.08,
+   "cash": 497.5,
    "penalty_paid": 0.0887
   },
   "D": {
    "name": "Small-cap explorer",
    "level": 2,
-   "ai_cost": 0.1886,
+   "ai_cost": 0.1975,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -57,7 +57,7 @@
   "E": {
    "name": "Claude's pick",
    "level": 2,
-   "ai_cost": 0.2374,
+   "ai_cost": 0.2499,
    "positions": {
     "META": {
      "cost_basis": 160.05666,
@@ -146,13 +146,22 @@
    "date": "2026-10-20"
   },
   {
-   "date": "2026-10-21",
    "A": 476.7185,
    "B": 507.9667,
    "C": 497.2704,
    "D": 499.8114,
    "E": 496.408,
-   "SPY": 499.0199
+   "SPY": 499.0199,
+   "date": "2026-10-21"
+  },
+  {
+   "date": "2026-10-22",
+   "A": 462.1783,
+   "B": 505.1428,
+   "C": 497.2584,
+   "D": 499.8025,
+   "E": 475.9701,
+   "SPY": 492.0528
   }
  ],
  "weekly": [
@@ -1529,19 +1538,94 @@
     "input_tokens": 4181,
     "output_tokens": 143
    }
+  },
+  {
+   "ts": "2026-10-22T17:55:31+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "The hard stop on META has triggered at -10.4%. I'm selling it and will redeploy the proceeds into a non-tech leader such as MA or CVX once they settle.",
+   "orders": [
+    {
+     "action": "sell",
+     "symbol": "META",
+     "sell_fraction": 1,
+     "limit_price": 643,
+     "confidence": 6,
+     "reasoning": "META is 10.4% below entry, past the 8% hard stop, so I'm exiting in full. I set the limit slightly below the quote so it fills.",
+     "result": "placed sell 0.2291 @ 643.0"
+    }
+   ],
+   "cost": 0.01106,
+   "usage": {
+    "input_tokens": 3459,
+    "output_tokens": 414
+   }
+  },
+  {
+   "ts": "2026-10-22T17:55:33+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Hold NVDA (-3.6%, above the ~210 stop) and stay in cash. The selloff is active and getting worse, and META's -7% drop looks like real news. Semis are correlated with NVDA, and the other names have broken trends.",
+   "orders": [],
+   "cost": 0.00857,
+   "usage": {
+    "input_tokens": 3530,
+    "output_tokens": 151
+   }
+  },
+  {
+   "ts": "2026-10-22T17:55:35+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding cash: the best setup is the Meta/AMD/NVDA AI-spending selloff, but it's a broad sector move with no green-close confirmation and it's still falling today (XLK -3.2%), so I'm not buying.",
+   "orders": [],
+   "cost": 0.01197,
+   "usage": {
+    "input_tokens": 5246,
+    "output_tokens": 148
+   }
+  },
+  {
+   "ts": "2026-10-22T17:55:38+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Hold: no names in the 3\u201315% band appear in the list, and every mover is a 30%+ spike or crash, a warrant, or has a wide spread, so there is no edge over trading costs.",
+   "orders": [],
+   "cost": 0.00882,
+   "usage": {
+    "input_tokens": 3742,
+    "output_tokens": 134
+   }
+  },
+  {
+   "ts": "2026-10-22T17:55:42+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Hold: META is 10% below entry intraday, but the stop is judged on closes. Yesterday's close was about 698, roughly 3% below entry, so the 8% stop hasn't fired. I'll re-check on today's close.",
+   "orders": [],
+   "cost": 0.01249,
+   "usage": {
+    "input_tokens": 4170,
+    "output_tokens": 415
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.192608,
-    "B": 0.202358,
-    "C": 0.229182,
-    "D": 0.188628,
-    "E": 0.26719
+    "A": 0.203666,
+    "B": 0.210928,
+    "C": 0.241154,
+    "D": 0.197452,
+    "E": 0.27968
    },
-   "calls": 61,
-   "total": 1.079966
+   "calls": 66,
+   "total": 1.13288
   }
  },
  "budget": {

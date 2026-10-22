@@ -77,21 +77,42 @@
       "E": 496.408,
       "SPY": 499.0199,
       "date": "2026-10-21"
+    },
+    {
+      "A": 462.1783,
+      "B": 505.1428,
+      "C": 497.2584,
+      "D": 499.8025,
+      "E": 475.9701,
+      "SPY": 492.0528,
+      "date": "2026-10-22"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.192608,
+      "ai_cost": 0.203666,
       "cash": 37.218348,
       "checkin_level": 3,
       "penalty_paid": 2.985541,
-      "pending_orders": [],
+      "pending_orders": [
+        {
+          "client_id": "A-b43ca6a21544",
+          "confidence": 6,
+          "limit_price": 643.0,
+          "order_id": "4076ca4f-1055-411a-b1fe-6bc81bcf4336",
+          "penalty_pct": 0.000989,
+          "qty": 0.2291,
+          "side": "sell",
+          "submitted": "2026-10-22T13:55:24.207058-04:00",
+          "symbol": "META"
+        }
+      ],
       "positions": {
         "META": {
           "cost_basis": 165.488858,
           "qty": 0.2291,
-          "reserved_qty": 0.0
+          "reserved_qty": 0.2291
         },
         "PLTR": {
           "cost_basis": 164.723092,
@@ -110,8 +131,8 @@
       "unsettled": []
     },
     "B": {
-      "ai_cost": 0.202358,
-      "cash": 363.650862,
+      "ai_cost": 0.210928,
+      "cash": 437.966228,
       "checkin_level": 2,
       "penalty_paid": 3.834933,
       "pending_orders": [],
@@ -125,16 +146,11 @@
       "realized_pnl": 7.905104,
       "reserved": 0.0,
       "trades": 5,
-      "unsettled": [
-        {
-          "amount": 74.315366,
-          "settles": "2026-10-22"
-        }
-      ]
+      "unsettled": []
     },
     "C": {
-      "ai_cost": 0.229182,
-      "cash": 410.078722,
+      "ai_cost": 0.241154,
+      "cash": 497.499618,
       "checkin_level": 2,
       "penalty_paid": 0.08867,
       "pending_orders": [],
@@ -142,15 +158,10 @@
       "realized_pnl": -2.500382,
       "reserved": 0.0,
       "trades": 2,
-      "unsettled": [
-        {
-          "amount": 87.420896,
-          "settles": "2026-10-22"
-        }
-      ]
+      "unsettled": []
     },
     "D": {
-      "ai_cost": 0.188628,
+      "ai_cost": 0.197452,
       "cash": 500.0,
       "checkin_level": 2,
       "penalty_paid": 0.0,
@@ -162,7 +173,7 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.237434,
+      "ai_cost": 0.249924,
       "cash": 55.501238,
       "checkin_level": 2,
       "penalty_paid": 0.263381,

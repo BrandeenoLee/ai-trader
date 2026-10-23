@@ -88,21 +88,21 @@
       "date": "2026-10-22"
     },
     {
-      "A": 459.2576,
-      "B": 504.8523,
+      "A": 459.6174,
+      "B": 504.7288,
       "C": 497.2465,
       "D": 499.7933,
-      "E": 475.7681,
-      "SPY": 490.6214,
+      "E": 475.2345,
+      "SPY": 490.112,
       "date": "2026-10-23"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.213918,
+      "ai_cost": 0.259534,
       "cash": 37.218348,
-      "checkin_level": 3,
+      "checkin_level": 2,
       "penalty_paid": 3.132204,
       "pending_orders": [],
       "positions": {
@@ -128,9 +128,9 @@
       ]
     },
     "B": {
-      "ai_cost": 0.219474,
+      "ai_cost": 0.260386,
       "cash": 437.966228,
-      "checkin_level": 2,
+      "checkin_level": 3,
       "penalty_paid": 3.834933,
       "pending_orders": [],
       "positions": {
@@ -146,9 +146,9 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.253122,
+      "ai_cost": 0.299082,
       "cash": 497.499618,
-      "checkin_level": 2,
+      "checkin_level": 3,
       "penalty_paid": 0.08867,
       "pending_orders": [],
       "positions": {},
@@ -158,9 +158,9 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.206708,
+      "ai_cost": 0.24848,
       "cash": 500.0,
-      "checkin_level": 2,
+      "checkin_level": 3,
       "penalty_paid": 0.0,
       "pending_orders": [],
       "positions": {},
@@ -170,29 +170,12 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.266234,
+      "ai_cost": 0.311354,
       "cash": 55.501238,
-      "checkin_level": 2,
-      "penalty_paid": 0.263381,
-      "pending_orders": [
-        {
-          "client_id": "E-076c34b685d0",
-          "confidence": 8,
-          "limit_price": 644.5,
-          "order_id": "bf689bb9-8c85-4ecb-a326-49208e38f612",
-          "penalty_pct": 0.002509,
-          "qty": 0.2226,
-          "side": "sell",
-          "submitted": "2026-10-23T13:50:24.407718-04:00",
-          "symbol": "META"
-        }
-      ],
+      "checkin_level": 1,
+      "penalty_paid": 0.623933,
+      "pending_orders": [],
       "positions": {
-        "META": {
-          "cost_basis": 160.05666,
-          "qty": 0.2226,
-          "reserved_qty": 0.2226
-        },
         "MSFT": {
           "cost_basis": 109.759782,
           "qty": 0.205,
@@ -204,10 +187,15 @@
           "reserved_qty": 0.0
         }
       },
-      "realized_pnl": 0.0,
+      "realized_pnl": -16.713775,
       "reserved": 0.0,
-      "trades": 3,
-      "unsettled": []
+      "trades": 4,
+      "unsettled": [
+        {
+          "amount": 143.342885,
+          "settles": "2026-10-26"
+        }
+      ]
     }
   }
 }

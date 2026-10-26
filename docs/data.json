@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 2,
-   "ai_cost": 0.2595,
+   "ai_cost": 0.2713,
    "positions": {
     "PLTR": {
      "cost_basis": 164.723092,
@@ -16,13 +16,13 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 37.22,
+   "cash": 55.37,
    "penalty_paid": 3.1322
   },
   "B": {
    "name": "Mean reversion",
    "level": 3,
-   "ai_cost": 0.2604,
+   "ai_cost": 0.2689,
    "positions": {
     "NVDA": {
      "cost_basis": 69.938876,
@@ -36,7 +36,7 @@
   "C": {
    "name": "Catalyst reader",
    "level": 3,
-   "ai_cost": 0.2991,
+   "ai_cost": 0.3125,
    "positions": {},
    "cash": 497.5,
    "penalty_paid": 0.0887
@@ -44,7 +44,7 @@
   "D": {
    "name": "Small-cap explorer",
    "level": 3,
-   "ai_cost": 0.2485,
+   "ai_cost": 0.2578,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -52,12 +52,12 @@
   "E": {
    "name": "Claude's pick",
    "level": 1,
-   "ai_cost": 0.3114,
+   "ai_cost": 0.3281,
    "positions": {
     "MSFT": {
      "cost_basis": 109.759782,
      "qty": 0.205,
-     "reserved_qty": 0.0
+     "reserved_qty": 0.205
     },
     "QQQ": {
      "cost_basis": 174.68232,
@@ -65,7 +65,7 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 55.5,
+   "cash": 13.91,
    "penalty_paid": 0.6239
   }
  },
@@ -154,13 +154,22 @@
    "date": "2026-10-22"
   },
   {
-   "date": "2026-10-23",
    "A": 459.6174,
    "B": 504.7288,
    "C": 497.2465,
    "D": 499.7933,
    "E": 475.2345,
-   "SPY": 490.112
+   "SPY": 490.112,
+   "date": "2026-10-23"
+  },
+  {
+   "date": "2026-10-26",
+   "A": 460.359,
+   "B": 506.1805,
+   "C": 497.1871,
+   "D": 499.7422,
+   "E": 478.4611,
+   "SPY": 493.2135
   }
  ],
  "weekly": [
@@ -1854,19 +1863,113 @@
    "self_assessment": "META's earnings gap sank the week (-3.41% vs SPY -0.42%). Moving to a QQQ-heavy core with a strict earnings-exposure cap.",
    "confidence_beat_spy": 4,
    "cost": 0.04512
+  },
+  {
+   "ts": "2026-10-26T19:09:42+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Settled cash is available, so I'm redeploying about $130 into XLE, a non-tech momentum leader. I'm holding PLTR and V.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "XLE",
+     "amount_usd": 130,
+     "limit_price": 69.85,
+     "confidence": 5,
+     "reasoning": "XLE leads on 20d (+12.2%) and 60d (+17%), is 8.3% above its 50d (not extended), has no spike, and is non-tech. The ETF avoids single-name risk.",
+     "result": "placed buy 1.8611 @ 69.85"
+    }
+   ],
+   "cost": 0.0118,
+   "usage": {
+    "input_tokens": 3412,
+    "output_tokens": 498
+   }
+  },
+  {
+   "ts": "2026-10-26T19:09:44+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Hold NVDA (-2.1%, above the ~210 stop) and stay mostly in cash; no clean intact-trend dip, since most of the sharp drops (T, GOOGL, NFLX, XLC) have broken trends or look news-driven.",
+   "orders": [],
+   "cost": 0.00847,
+   "usage": {
+    "input_tokens": 3461,
+    "output_tokens": 155
+   }
+  },
+  {
+   "ts": "2026-10-26T19:09:48+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Holding cash: the best setup is Merck's positive endometrial cancer data alongside a 3.2% drop, but I can't explain the drop or see MRK's price history, and the Meta $95B raise is still part of the AI-capex selloff with no green-close confirmation.",
+   "orders": [],
+   "cost": 0.01338,
+   "usage": {
+    "input_tokens": 5022,
+    "output_tokens": 334
+   }
+  },
+  {
+   "ts": "2026-10-26T19:09:50+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Hold: the 3\u201315% band is empty again. The liquid movers are spikes or crashes (SGRY +47% at a 0.04% spread, AGBK -40%, CLRO +55% at a 2.78% spread), and there's no day-2 setup I can verify, so there's no edge over trading costs.",
+   "orders": [],
+   "cost": 0.00936,
+   "usage": {
+    "input_tokens": 3820,
+    "output_tokens": 172
+   }
+  },
+  {
+   "ts": "2026-10-26T19:09:58+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "Following the notes: sweep the excess cash into QQQ and exit MSFT ahead of its earnings report, with that cash going to QQQ after it settles.",
+   "orders": [
+    {
+     "action": "sell",
+     "symbol": "MSFT",
+     "sell_fraction": 1.0,
+     "limit_price": 530.5,
+     "confidence": 8,
+     "reasoning": "MSFT is 23% of equity and reports in about 2 sessions. The earnings rule caps a name at 10% through earnings, so I'm selling it and will move the proceeds to QQQ once they settle.",
+     "result": "placed sell 0.205 @ 530.5"
+    },
+    {
+     "action": "buy",
+     "symbol": "QQQ",
+     "amount_usd": 185,
+     "limit_price": 714.3,
+     "confidence": 8,
+     "reasoning": "Cash sweep: about 41% cash, well above the 5% limit, so it goes into the QQQ core.",
+     "result": "placed buy 0.2589 @ 714.3"
+    }
+   ],
+   "cost": 0.01678,
+   "usage": {
+    "input_tokens": 4071,
+    "output_tokens": 864
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.259534,
-    "B": 0.260386,
-    "C": 0.299082,
-    "D": 0.24848,
-    "E": 0.34111
+    "A": 0.271338,
+    "B": 0.268858,
+    "C": 0.312466,
+    "D": 0.25784,
+    "E": 0.357892
    },
-   "calls": 76,
-   "total": 1.408592
+   "calls": 81,
+   "total": 1.468394
   }
  },
  "budget": {

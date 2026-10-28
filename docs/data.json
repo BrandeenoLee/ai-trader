@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 2,
-   "ai_cost": 0.2797,
+   "ai_cost": 0.2902,
    "positions": {
     "PLTR": {
      "cost_basis": 164.723092,
@@ -16,8 +16,8 @@
      "reserved_qty": 0.0
     },
     "XLE": {
-     "qty": 1.8611,
      "cost_basis": 129.709048,
+     "qty": 1.8611,
      "reserved_qty": 0.0
     }
    },
@@ -27,7 +27,7 @@
   "B": {
    "name": "Mean reversion",
    "level": 3,
-   "ai_cost": 0.2774,
+   "ai_cost": 0.286,
    "positions": {
     "NVDA": {
      "cost_basis": 69.938876,
@@ -41,7 +41,7 @@
   "C": {
    "name": "Catalyst reader",
    "level": 3,
-   "ai_cost": 0.3254,
+   "ai_cost": 0.3372,
    "positions": {},
    "cash": 497.5,
    "penalty_paid": 0.0887
@@ -49,7 +49,7 @@
   "D": {
    "name": "Small-cap explorer",
    "level": 3,
-   "ai_cost": 0.2671,
+   "ai_cost": 0.2772,
    "positions": {},
    "cash": 500.0,
    "penalty_paid": 0.0
@@ -57,7 +57,7 @@
   "E": {
    "name": "Claude's pick",
    "level": 1,
-   "ai_cost": 0.3405,
+   "ai_cost": 0.3547,
    "positions": {
     "QQQ": {
      "cost_basis": 359.330945,
@@ -65,7 +65,7 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 14.2,
+   "cash": 121.08,
    "penalty_paid": 0.7707
   }
  },
@@ -172,13 +172,22 @@
    "date": "2026-10-26"
   },
   {
-   "date": "2026-10-27",
    "A": 456.4063,
    "B": 506.5869,
    "C": 497.1742,
    "D": 499.7329,
    "E": 482.0646,
-   "SPY": 495.9281
+   "SPY": 495.9281,
+   "date": "2026-10-27"
+  },
+  {
+   "date": "2026-10-28",
+   "A": 453.9506,
+   "B": 506.2173,
+   "C": 497.1624,
+   "D": 499.7228,
+   "E": 483.8133,
+   "SPY": 497.6175
   }
  ],
  "weekly": [
@@ -2068,19 +2077,94 @@
     "input_tokens": 4060,
     "output_tokens": 427
    }
+  },
+  {
+   "ts": "2026-10-28T18:47:20+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Holding PLTR, V and XLE: all are within 2.2% of entry, above their stops, with no 50-day breaks. Only $55 of cash is available, and the best new candidates (CVX, XOM) overlap with XLE.",
+   "orders": [],
+   "cost": 0.01043,
+   "usage": {
+    "input_tokens": 3462,
+    "output_tokens": 351
+   }
+  },
+  {
+   "ts": "2026-10-28T18:47:22+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Hold NVDA (-2.0%, above ~210 stop) and stay mostly in cash; the sharpest drops (BA, META, T, NFLX, XLC) are news-driven or have broken trends, and MRK's dip is too small to expect a bounce over 3%.",
+   "orders": [],
+   "cost": 0.00857,
+   "usage": {
+    "input_tokens": 3473,
+    "output_tokens": 162
+   }
+  },
+  {
+   "ts": "2026-10-28T18:47:25+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Holding cash: the news is Fed-hold and macro-driven, and there's no clean single-name catalyst. The best candidate is Boeing, down 13% over 5 days, but no headline in the feed explains the drop and there's no green-close confirmation.",
+   "orders": [],
+   "cost": 0.0118,
+   "usage": {
+    "input_tokens": 5130,
+    "output_tokens": 154
+   }
+  },
+  {
+   "ts": "2026-10-28T18:47:31+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Hold: the 3\u201315% band is empty again. The liquid 15\u201340% names fail the screen. VRTL (+32%, 0.37% spread) is the only candidate and I have no day-1 base for it, so it goes on the watchlist. LUNG (+32%, $0.56M volume) fails the volume screen. BOOM (+39%, $0.99M volume) is just under the volume floor and too extended. OTLY (-29%) is a crash. Nothing has an edge over trading costs.",
+   "orders": [],
+   "cost": 0.01005,
+   "usage": {
+    "input_tokens": 3859,
+    "output_tokens": 233
+   }
+  },
+  {
+   "ts": "2026-10-28T18:47:37+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "Cash has settled to $123, so I'm sweeping the excess into QQQ and keeping about 5% in cash. No single-stock leaders, because chasing extended names is unattractive. The Fed is hawkish, which makes holding QQQ beta the default.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "QQQ",
+     "amount_usd": 98,
+     "limit_price": 725.4,
+     "confidence": 8,
+     "reasoning": "Cash sweep per notes: cash is about 25% of equity, so move the excess above 5% into QQQ now that it has settled.",
+     "result": "placed buy 0.0028 @ 725.4 (amount cut to $2.06 by the 75% position cap)"
+    }
+   ],
+   "cost": 0.01419,
+   "usage": {
+    "input_tokens": 4004,
+    "output_tokens": 618
+   }
   }
  ],
  "spend": {
   "2026-10": {
    "by_strategy": {
-    "A": 0.279728,
-    "B": 0.27743,
-    "C": 0.325366,
-    "D": 0.267128,
-    "E": 0.370282
+    "A": 0.290162,
+    "B": 0.285996,
+    "C": 0.337166,
+    "D": 0.277176,
+    "E": 0.38447
    },
-   "calls": 86,
-   "total": 1.519934
+   "calls": 91,
+   "total": 1.57497
   }
  },
  "budget": {

@@ -122,12 +122,21 @@
       "E": 483.8133,
       "SPY": 497.6175,
       "date": "2026-10-28"
+    },
+    {
+      "A": 455.5087,
+      "B": 505.0842,
+      "C": 497.1485,
+      "D": 499.7129,
+      "E": 478.3461,
+      "SPY": 494.9254,
+      "date": "2026-10-29"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.290162,
+      "ai_cost": 0.298672,
       "cash": 55.656776,
       "checkin_level": 2,
       "penalty_paid": 3.197026,
@@ -155,7 +164,7 @@
       "unsettled": []
     },
     "B": {
-      "ai_cost": 0.285996,
+      "ai_cost": 0.294782,
       "cash": 437.966228,
       "checkin_level": 3,
       "penalty_paid": 3.834933,
@@ -173,7 +182,7 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.337166,
+      "ai_cost": 0.351108,
       "cash": 497.499618,
       "checkin_level": 3,
       "penalty_paid": 0.08867,
@@ -185,7 +194,7 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.277176,
+      "ai_cost": 0.287088,
       "cash": 500.0,
       "checkin_level": 3,
       "penalty_paid": 0.0,
@@ -197,34 +206,34 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.354714,
-      "cash": 121.078054,
+      "ai_cost": 0.369664,
+      "cash": 24.122805,
       "checkin_level": 1,
-      "penalty_paid": 0.770695,
+      "penalty_paid": 0.771709,
       "pending_orders": [
         {
-          "client_id": "E-99a67325cb73",
-          "confidence": 8,
-          "limit_price": 725.4,
-          "order_id": "f85cb7f6-998c-4225-b617-fcb4d0d2cad5",
+          "client_id": "E-7805d7ad6bdc",
+          "confidence": 5,
+          "limit_price": 768.9,
+          "order_id": "c48bac05-807f-4349-b18e-f0482869eebf",
           "penalty_pct": 0.0005,
-          "qty": 0.0028,
-          "reserved_cash": 2.03112,
+          "qty": 0.1261,
+          "reserved_cash": 96.95828999999999,
           "side": "buy",
-          "submitted": "2026-10-28T14:47:13.233179-04:00",
-          "symbol": "QQQ"
+          "submitted": "2026-10-29T14:55:27.663531-04:00",
+          "symbol": "SPY"
         }
       ],
       "positions": {
         "QQQ": {
-          "cost_basis": 359.330945,
-          "qty": 0.4987,
+          "cost_basis": 361.359024,
+          "qty": 0.5015,
           "reserved_qty": 0.0
         }
       },
       "realized_pnl": -17.559881,
-      "reserved": 2.03112,
-      "trades": 6,
+      "reserved": 96.95829,
+      "trades": 7,
       "unsettled": []
     }
   }

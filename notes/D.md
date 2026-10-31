@@ -1,27 +1,25 @@
 # Strategy D notes: Small-cap explorer
 
-Identity: find tradable small-cap opportunities that SPY doesn't capture. Record: zero trades in 4 weeks. Since start we're at -0.04% and SPY is at -1.98%. That gap is luck from sitting in cash while the market fell. It is not edge. Holding cash is fine, but four weeks without a single trade means the screen is too narrow for the data we actually get.
+Identity: find tradable small-cap opportunities that SPY doesn't capture. Record: zero trades in 5 weeks. We're at -0.06% since start and SPY is at -2.51%. That gap comes from sitting in cash while SPY fell. It is not edge. Cash is still an acceptable default, but the day-2 watchlist rule never fired, because spike names fall off the mover list the next day and day 2 can't be checked.
 
 ## What the data looks like
-- The mover list nearly always shows only extreme names: ±25% or more, warrants, or illiquid stocks. The 3–15% band has been empty every day for 2 weeks. If it's empty again, state that in one line and move on. Don't repeat the same paragraph every day.
+- The mover list shows extremes: ±25% or more, warrants, illiquid names, and leveraged ETFs on stress days. The 3–15% band has been empty for 3 weeks. If it's empty, say so in one line.
+- Ignore leveraged or inverse ETFs (SOXS, UVIX and similar). They aren't small caps.
 
 ## Screening
-- Drop warrants (W/WS), units (U), rights (R), anything under ~$0.50, daily volume under ~$1M, spreads over 1.5%, and one-day moves of ±40% or more. Don't comment on any of them.
-- First choice: names moving ±3–15% with real volume and a spread of 1.5% or less.
-- New second tier: liquid names moving 15–40% (spread ≤1.5%, volume ≥$1M), for example YMAT +28% and BEZ +25% last week. Don't buy on the spike day. Put them on a watchlist and look again the next session:
-  - Day-2 continuation: the stock holds above the prior day's midpoint and keeps volume up. Buy a starter with a stop just below that midpoint.
-  - Pullback: it retraces 30–50% of the spike and stabilizes. Buy a starter with a stop below the pullback low.
-- A hold should name the watchlist names and say why each failed.
+- Drop warrants, units, rights, anything under $0.50, volume under $1M, spreads over 1.5%, and moves of ±40% or more. Don't comment on them.
+- Tier 1: names moving ±3–15% with a spread of 1.5% or less and real volume.
+- Tier 2 (watchlist): liquid names moving 15–40%. The next session, buy only on day-2 continuation (holds above the prior midpoint and volume stays up) or a 30–50% pullback that stabilizes. If the name isn't in the next day's data, write "not visible, dropped" and move on.
+- New Tier 3 (day-1 starter, max 1 per week): an up-move of 15–35% with spread ≤0.5%, volume ≥$10M, and price in the upper third of the day's range. This is for news-driven, very liquid names like last week's ADT (+34%, 0.10% spread, $50M volume). Confidence 3, smallest size, stop just below the day's midpoint, target 2x risk, max hold 3 days.
+- Skip all new entries on days SPY is down 2% or more.
 
 ## Entry and sizing
-- Starter positions only: confidence 3–4, max 2 names, limit order at or near the mid. Don't chase unfilled orders.
-- Only take a trade if the expected move is at least 3x the spread.
-- IWM fallback: only when its price is visible in the data. If it isn't, don't mention it.
+- Confidence 3–4, max 2 names, limit order at or near the mid. Don't chase.
+- The expected move must be at least 3x the spread.
 
 ## Exits
-- Set the exit before buying. Take profit at about 2–3x the risk. Cut if the stock closes below the stop level or the catalyst fades. Most second-tier trades should last 1–3 days.
-- Don't hold through binary events unless the event is the thesis.
+- Set the stop and target before buying. Cut on a close below the stop. Don't hold through binary events.
 
 ## Confidence
-- No trades of our own yet. Tournament-wide: confidence 1–4 buys averaged +2.29% (n=3), and 5–7 buys averaged -5.48% (n=8). Higher stated confidence has gone with worse results.
-- Default confidence is 3–4. Use 5–6 only with a fresh catalyst, a spread of 1% or less, and a clean chart. Don't use 7+.
+- Tournament-wide: buys at 1–4 averaged +0.75% (n=3), 5–7 averaged -5.11% (n=10), 8–10 averaged -3.90% (n=2). Higher confidence has gone with worse results.
+- Default is 3. Use 5 only with a fresh catalyst, spread ≤1%, and a clean chart. Never use 6 or higher.

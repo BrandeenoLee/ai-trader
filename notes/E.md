@@ -1,34 +1,32 @@
-# Strategy E: Claude's pick: QQQ core plus a small leader sleeve, with earnings risk controlled
+# Strategy E: Claude's pick: low-turnover QQQ/SPY core, rare single-stock leaders
 
 ## Approach
-QQQ is the core at 60-80%. Add at most 2 single-stock momentum leaders at 10-20% each. Keep cash at 5% or less. Results so far: single stocks held through earnings did the damage (META fell about 10% on earnings, costing -3.4% of the portfolio this week). Beta via QQQ is the main source of return; stock picks are a small tilt.
+QQQ is a higher-beta tilt against SPY, held with very few trades. Losses so far came from single stocks held through earnings (META) and from trading costs ($0.82 in spreads, about 0.16% of $500). This week QQQ lagged SPY in a tech-led drop. That's normal noise for this tilt, so it isn't a reason to change the approach. **The edge comes from not trading.**
+
+## Current target (hold it)
+- QQQ about 70-75% (the cap is 75%) and SPY about 20-25%. Keep cash at 5% or less.
+- No single stocks while SPY is below its 50-day average.
 
 ## Universe
-- QQQ, plus US stocks over $10B market cap with average daily volume over $50M. Other ETFs allowed: SPY, XLK, SMH.
-- Skip anything up more than 15% in 3 days.
+- QQQ and SPY first. XLK and SMH are allowed but are not needed.
+- Single stocks only when SPY is above its 50-day: US stocks over $10B market cap with average daily volume over $50M. The price must be above a rising 50-day average and the 50-day above the 200-day. Skip anything up more than 15% in 3 days.
 
-## Entry
-- Price above the 50-day average, and the 50-day above the 200-day.
-- Do not open a position within 5 trading days before earnings.
-- Limits: last price to +0.3% above. After two expiries, use QQQ instead.
-- If SPY closes below its 50-day: no new single stocks; QQQ only.
+## Entry (single stocks)
+- At most 1 new single stock per week, sized 10-15%, funded from SPY rather than QQQ.
+- Never open a position within 5 trading days of its earnings date.
+- Limit price: last to +0.3%. If the order expires twice, drop the idea.
 
-## Earnings rule (new, most important)
-- Check every holding's next earnings date at each check-in.
-- 2 sessions before a report, cut the stock to 10% of the portfolio or less, or sell it entirely into QQQ. Never hold more than 10% in one name through earnings.
-- **MSFT reports around late October.** Sell it to QQQ at the next check-in unless it is already 10% or less.
+## Earnings rule
+- Check every holding's next earnings date at each check-in. Two sessions before a report, cut the name to 10% or less, or sell it into SPY.
 
-## Sizing
-- Single stock: 10-20%, never above 20%. Confidence only decides within that range.
-- Confidence is not predictive. Tournament results: conf 1-4 avg +2.3% (3 buys); conf 5-7 avg -5.5% (8 buys). Never size up on a story.
-- Cash sweep: any cash above 5% goes to QQQ at last +0.2%, at the same check-in, once settled. **Now: about 40% cash after the META sale, so sweep it to QQQ first thing.**
+## Exits (judged on verified prior closes)
+- Single stocks: sell on a close 8% below entry, or 2 closes more than 2% below the 50-day average.
+- QQQ: no price stop. Selling into a dip only locks in losses and pays spread. Rotate QQQ to SPY only if QQQ closes below its 200-day average.
+- Proceeds go to SPY or QQQ, whichever is under its target, at the same check-in.
 
-## Exits (judged on prior closes; verify the close date, as last week a stale close delayed the stop)
-- Single stocks: sell on a close 8% below entry, or 2 closes more than 2% below the 50-day.
-- QQQ: sell only to fund a leader, or on a close 10% below entry.
-- Exit proceeds go to QQQ at the same check-in.
-- At most 1 new single-stock entry per week.
+## Sizing and confidence
+- Confidence does not predict results. Tournament-wide, conf 1-4 buys averaged +0.75%, conf 5-7 averaged -5.1% and conf 8-10 averaged -3.9%. Use the smallest size in the allowed range; never size up on conviction.
+- Only sweep cash once it exceeds 8%. Don't make tiny trades (the $2 QQQ buy was a waste).
 
 ## Habits
-- Target now: QQQ about 85-95%, MSFT 0-10% through earnings.
-- The default is to hold. Expect 1-3 trades per week. Log a confidence score and a one-line reason for each trade.
+- The default is HOLD. Aim for 0-1 trades per week. Log a confidence score and a one-line reason for each trade.

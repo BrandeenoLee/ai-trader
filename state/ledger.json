@@ -158,38 +158,30 @@
       "E": 468.1857,
       "SPY": 495.106,
       "date": "2026-11-04"
+    },
+    {
+      "A": 441.082,
+      "B": 501.3487,
+      "C": 495.4026,
+      "D": 496.0185,
+      "E": 442.8534,
+      "SPY": 473.8437,
+      "date": "2026-11-05"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.379912,
+      "ai_cost": 0.388402,
       "cash": 78.269681,
       "checkin_level": 1,
-      "penalty_paid": 4.034555,
-      "pending_orders": [
-        {
-          "client_id": "A-bfa54a40f2e9",
-          "confidence": 5,
-          "limit_price": 63.1,
-          "order_id": "a98c28b5-e425-4564-8688-5dcc41d7f500",
-          "penalty_pct": 0.0005,
-          "qty": 1.8611,
-          "side": "sell",
-          "submitted": "2026-11-04T15:22:50.202225-05:00",
-          "symbol": "XLE"
-        }
-      ],
+      "penalty_paid": 4.093487,
+      "pending_orders": [],
       "positions": {
         "V": {
           "cost_basis": 109.759977,
           "qty": 0.2719,
           "reserved_qty": 0.0
-        },
-        "XLE": {
-          "cost_basis": 129.709048,
-          "qty": 1.8611,
-          "reserved_qty": 1.8611
         },
         "XLV": {
           "cost_basis": 129.68817,
@@ -197,13 +189,18 @@
           "reserved_qty": 0.0
         }
       },
-      "realized_pnl": -52.573124,
+      "realized_pnl": -64.477641,
       "reserved": 0.0,
-      "trades": 9,
-      "unsettled": []
+      "trades": 10,
+      "unsettled": [
+        {
+          "amount": 117.804531,
+          "settles": "2026-11-06"
+        }
+      ]
     },
     "B": {
-      "ai_cost": 0.371474,
+      "ai_cost": 0.379804,
       "cash": 501.728479,
       "checkin_level": 2,
       "penalty_paid": 3.86683,
@@ -215,57 +212,43 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.43977,
-      "cash": 427.504368,
+      "ai_cost": 0.452674,
+      "cash": 427.846217,
       "checkin_level": 4,
-      "penalty_paid": 0.08867,
-      "pending_orders": [
-        {
-          "client_id": "C-1aab200a5a5b",
-          "confidence": 4,
-          "limit_price": 292.5,
-          "order_id": "d866ba3f-30a6-42b7-bfe7-f66f8ebc5807",
-          "penalty_pct": 0.0005,
+      "penalty_paid": 0.123479,
+      "pending_orders": [],
+      "positions": {
+        "GOOGL": {
+          "cost_basis": 69.653401,
           "qty": 0.2393,
-          "reserved_cash": 69.99525,
-          "side": "buy",
-          "submitted": "2026-11-04T15:22:50.202225-05:00",
-          "symbol": "GOOGL"
+          "reserved_qty": 0.0
         }
-      ],
-      "positions": {},
+      },
       "realized_pnl": -2.500382,
-      "reserved": 69.99525,
-      "trades": 2,
+      "reserved": 0.0,
+      "trades": 3,
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.369532,
-      "cash": 450.00075,
+      "ai_cost": 0.381546,
+      "cash": 450.029275,
       "checkin_level": 4,
-      "penalty_paid": 0.0,
-      "pending_orders": [
-        {
-          "client_id": "D-a1118ac91254",
-          "confidence": 3,
-          "limit_price": 17.5,
-          "order_id": "1e082b64-3bc9-47c1-9bc4-fe7d8f000ce6",
-          "penalty_pct": 0.000573,
+      "penalty_paid": 0.028617,
+      "pending_orders": [],
+      "positions": {
+        "KD": {
+          "cost_basis": 49.970725,
           "qty": 2.8571,
-          "reserved_cash": 49.999249999999996,
-          "side": "buy",
-          "submitted": "2026-11-04T15:22:50.202225-05:00",
-          "symbol": "KD"
+          "reserved_qty": 0.0
         }
-      ],
-      "positions": {},
+      },
       "realized_pnl": 0.0,
-      "reserved": 49.99925,
-      "trades": 0,
+      "reserved": 0.0,
+      "trades": 1,
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.445174,
+      "ai_cost": 0.45612,
       "cash": 24.236067,
       "checkin_level": 1,
       "penalty_paid": 0.820107,

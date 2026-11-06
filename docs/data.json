@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 1,
-   "ai_cost": 0.3884,
+   "ai_cost": 0.4024,
    "positions": {
     "V": {
      "cost_basis": 109.759977,
@@ -16,25 +16,25 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 78.27,
+   "cash": 66.08,
    "penalty_paid": 4.0935
   },
   "B": {
    "name": "Mean reversion",
    "level": 2,
-   "ai_cost": 0.3798,
+   "ai_cost": 0.3926,
    "positions": {},
-   "cash": 501.73,
+   "cash": 426.74,
    "penalty_paid": 3.8668
   },
   "C": {
    "name": "Catalyst reader",
    "level": 4,
-   "ai_cost": 0.4527,
+   "ai_cost": 0.4688,
    "positions": {
     "GOOGL": {
-     "qty": 0.2393,
      "cost_basis": 69.653401,
+     "qty": 0.2393,
      "reserved_qty": 0.0
     }
    },
@@ -44,11 +44,11 @@
   "D": {
    "name": "Small-cap explorer",
    "level": 4,
-   "ai_cost": 0.3815,
+   "ai_cost": 0.3906,
    "positions": {
     "KD": {
-     "qty": 2.8571,
      "cost_basis": 49.970725,
+     "qty": 2.8571,
      "reserved_qty": 0.0
     }
    },
@@ -58,7 +58,7 @@
   "E": {
    "name": "Claude's pick",
    "level": 1,
-   "ai_cost": 0.4561,
+   "ai_cost": 0.4655,
    "positions": {
     "QQQ": {
      "cost_basis": 361.359024,
@@ -232,13 +232,22 @@
    "date": "2026-11-04"
   },
   {
-   "date": "2026-11-05",
    "A": 441.082,
    "B": 501.3487,
    "C": 495.4026,
    "D": 496.0185,
    "E": 442.8534,
-   "SPY": 473.8437
+   "SPY": 473.8437,
+   "date": "2026-11-05"
+  },
+  {
+   "date": "2026-11-06",
+   "A": 440.7341,
+   "B": 501.3359,
+   "C": 495.6054,
+   "D": 496.0808,
+   "E": 446.5981,
+   "SPY": 475.3461
   }
  ],
  "weekly": [
@@ -2843,6 +2852,91 @@
     "input_tokens": 4068,
     "output_tokens": 281
    }
+  },
+  {
+   "ts": "2026-11-06T19:55:30+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "V and XLV are both above entry and trending up. I'm putting about $130 of idle cash into KO, a non-extended low-beta leader from a new sector, and keeping about $65 in cash.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "KO",
+     "amount_usd": 130,
+     "limit_price": 96.1,
+     "confidence": 5,
+     "reasoning": "KO is a low-beta staples leader with positive 20d (+9.0%) and 60d (+9.7%) returns and sits 6.8% above its 50d average, so it isn't extended. It adds a sector we don't hold, and it ranks above the other non-overlapping options on 60d trend.",
+     "result": "placed buy 1.3527 @ 96.1"
+    }
+   ],
+   "cost": 0.01403,
+   "usage": {
+    "input_tokens": 3528,
+    "output_tokens": 697
+   }
+  },
+  {
+   "ts": "2026-11-06T19:55:35+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Broad market stabilized today, so I'm making one small entry in XOM, the best intact-trend dip, and keeping the rest in cash.",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "XOM",
+     "amount_usd": 75,
+     "limit_price": 166.6,
+     "confidence": 3,
+     "reasoning": "First stabilization day (SPY +0.6%, XOM +0.6%) after an 11% 5-day drop with the 60d trend intact and price near the 50d MA. Stop 158, take-profit about 175, time stop 11/20.",
+     "result": "placed buy 0.4501 @ 166.6"
+    }
+   ],
+   "cost": 0.01278,
+   "usage": {
+    "input_tokens": 3524,
+    "output_tokens": 573
+   }
+  },
+  {
+   "ts": "2026-11-06T19:55:42+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 4/day",
+   "summary": "Holding GOOGL (-2.0%) and cash. Today is session 3 of the position and it is +0.9% in a rebound, so I'm not selling at the lows. If it isn't back above my 291 cost basis by the next session, I exit under the time stop. I found no clean new single-name catalyst, since the AMD +10% move is part of a sector rebound.",
+   "orders": [],
+   "cost": 0.0161,
+   "usage": {
+    "input_tokens": 5356,
+    "output_tokens": 539
+   }
+  },
+  {
+   "ts": "2026-11-06T19:55:49+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 4/day",
+   "summary": "Hold: the 3\u201315% band is empty again, and every liquid mover is a \u00b150% spike or fails the screen. I'm keeping the small KD starter (-7%).",
+   "orders": [],
+   "cost": 0.00905,
+   "usage": {
+    "input_tokens": 3892,
+    "output_tokens": 127
+   }
+  },
+  {
+   "ts": "2026-11-06T19:55:51+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "Holding the QQQ/SPY core: the notes set no QQQ price stop, I can't verify a close below the 200-day, there are no single stocks, and cash is about 5.4%.",
+   "orders": [],
+   "cost": 0.00942,
+   "usage": {
+    "input_tokens": 4049,
+    "output_tokens": 132
+   }
   }
  ],
  "spend": {
@@ -2859,14 +2953,14 @@
   },
   "2026-11": {
    "by_strategy": {
-    "A": 0.030664,
-    "B": 0.030114,
-    "C": 0.045374,
-    "D": 0.038484,
-    "E": 0.029736
+    "A": 0.04469,
+    "B": 0.042892,
+    "C": 0.061476,
+    "D": 0.047538,
+    "E": 0.039154
    },
-   "calls": 15,
-   "total": 0.174372
+   "calls": 20,
+   "total": 0.23575
   }
  },
  "budget": {

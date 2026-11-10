@@ -3,8 +3,13 @@
   "A": {
    "name": "Momentum",
    "level": 2,
-   "ai_cost": 0.4516,
+   "ai_cost": 0.4602,
    "positions": {
+    "KO": {
+     "cost_basis": 129.856461,
+     "qty": 1.3527,
+     "reserved_qty": 0.0
+    },
     "V": {
      "cost_basis": 109.759977,
      "qty": 0.2719,
@@ -14,11 +19,6 @@
      "cost_basis": 129.68817,
      "qty": 0.703,
      "reserved_qty": 0.0
-    },
-    "KO": {
-     "qty": 1.3527,
-     "cost_basis": 129.856461,
-     "reserved_qty": 0.0
     }
    },
    "cash": 66.22,
@@ -27,11 +27,11 @@
   "B": {
    "name": "Mean reversion",
    "level": 3,
-   "ai_cost": 0.4365,
+   "ai_cost": 0.4453,
    "positions": {
     "XOM": {
-     "qty": 0.4501,
      "cost_basis": 76.260575,
+     "qty": 0.4501,
      "reserved_qty": 0.0
     }
    },
@@ -41,12 +41,12 @@
   "C": {
    "name": "Catalyst reader",
    "level": 5,
-   "ai_cost": 0.5184,
+   "ai_cost": 0.5325,
    "positions": {
     "GOOGL": {
      "cost_basis": 69.653401,
      "qty": 0.2393,
-     "reserved_qty": 0.0
+     "reserved_qty": 0.2393
     }
    },
    "cash": 427.85,
@@ -55,12 +55,12 @@
   "D": {
    "name": "Small-cap explorer",
    "level": 5,
-   "ai_cost": 0.4423,
+   "ai_cost": 0.4536,
    "positions": {
     "KD": {
      "cost_basis": 49.970725,
      "qty": 2.8571,
-     "reserved_qty": 0.0
+     "reserved_qty": 2.8571
     }
    },
    "cash": 450.03,
@@ -69,12 +69,12 @@
   "E": {
    "name": "Claude's pick",
    "level": 1,
-   "ai_cost": 0.5104,
+   "ai_cost": 0.5249,
    "positions": {
     "QQQ": {
      "cost_basis": 361.359024,
      "qty": 0.5015,
-     "reserved_qty": 0.0
+     "reserved_qty": 0.1253
     },
     "SPY": {
      "cost_basis": 96.845028,
@@ -252,13 +252,22 @@
    "date": "2026-11-05"
   },
   {
-   "date": "2026-11-06",
    "A": 440.0738,
    "B": 499.7379,
    "C": 495.5109,
    "D": 496.2094,
    "E": 446.0093,
-   "SPY": 474.6175
+   "SPY": 474.6175,
+   "date": "2026-11-06"
+  },
+  {
+   "date": "2026-11-10",
+   "A": 444.1126,
+   "B": 499.1046,
+   "C": 496.0646,
+   "D": 498.6035,
+   "E": 456.1919,
+   "SPY": 483.1256
   }
  ],
  "weekly": [
@@ -3123,6 +3132,101 @@
    "self_assessment": "Lagged SPY by 1.6 points on the QQQ tilt in a tech selloff; cutting QQQ to about 55% with one trade until SPY gets back above its 50-day.",
    "confidence_beat_spy": 4,
    "cost": 0.04489
+  },
+  {
+   "ts": "2026-11-10T20:25:33+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "All three holdings are above entry and above their 50-day averages, and no stops are triggered. The top 20-day names are extended or overlap with what I hold, so I'm holding and keeping about $66 in cash.",
+   "orders": [],
+   "cost": 0.00858,
+   "usage": {
+    "input_tokens": 3602,
+    "output_tokens": 138
+   }
+  },
+  {
+   "ts": "2026-11-10T20:25:36+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Hold XOM, which is above the 161 exit level and the 158 stop. The rest of the market is still weak or trend-broken, so I'm staying in cash.",
+   "orders": [],
+   "cost": 0.0088,
+   "usage": {
+    "input_tokens": 3479,
+    "output_tokens": 184
+   }
+  },
+  {
+   "ts": "2026-11-10T20:25:39+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 5/day",
+   "summary": "Applying the time stop to GOOGL. The other headlines are noise or part of the sector-wide chip selloff, so I see no clean new single-name catalyst.",
+   "orders": [
+    {
+     "action": "sell",
+     "symbol": "GOOGL",
+     "limit_price": 286.5,
+     "confidence": 4,
+     "sell_fraction": 1,
+     "reasoning": "Time stop: the position is past session 3 and still below the 291.07 cost at 287.30. The thesis was a broad-rally bounce, not a stock-specific catalyst, so I'm exiting under the rule.",
+     "result": "placed sell 0.2393 @ 286.5"
+    }
+   ],
+   "cost": 0.01404,
+   "usage": {
+    "input_tokens": 5037,
+    "output_tokens": 397
+   }
+  },
+  {
+   "ts": "2026-11-10T20:25:45+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 5/day",
+   "summary": "Exiting the KD starter on its time stop. The 3\u201315% band is empty again and every mover is a spike or fails the screens, so there are no new entries.",
+   "orders": [
+    {
+     "action": "sell",
+     "symbol": "KD",
+     "limit_price": 17.05,
+     "sell_fraction": 1,
+     "confidence": 3,
+     "reasoning": "Time stop from the plan: sell at the 11/10 close if neither the 15.2 stop nor the ~22 target has hit. Neither has, so I'm exiting mechanically without extending the hold.",
+     "result": "placed sell 2.8571 @ 17.05"
+    }
+   ],
+   "cost": 0.0113,
+   "usage": {
+    "input_tokens": 3853,
+    "output_tokens": 359
+   }
+  },
+  {
+   "ts": "2026-11-10T20:25:51+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "QQQ is overweight against the weak-regime target, so I'm making the one weekly rebalance sale and will buy SPY once the proceeds settle.",
+   "orders": [
+    {
+     "action": "sell",
+     "symbol": "QQQ",
+     "limit_price": 673.5,
+     "sell_fraction": 0.25,
+     "confidence": 3,
+     "reasoning": "Weekly regime rebalance: QQQ is 74% vs the 55% target, more than 7 points over. Sell about $85 now; buy SPY with the settled proceeds next session.",
+     "result": "placed sell 0.1253 @ 673.5"
+    }
+   ],
+   "cost": 0.01449,
+   "usage": {
+    "input_tokens": 3832,
+    "output_tokens": 683
+   }
   }
  ],
  "spend": {
@@ -3139,14 +3243,14 @@
   },
   "2026-11": {
    "by_strategy": {
-    "A": 0.093902,
-    "B": 0.086768,
-    "C": 0.11112,
-    "D": 0.099238,
-    "E": 0.084046
+    "A": 0.102486,
+    "B": 0.095566,
+    "C": 0.125164,
+    "D": 0.110534,
+    "E": 0.09854
    },
-   "calls": 25,
-   "total": 0.475074
+   "calls": 30,
+   "total": 0.53229
   }
  },
  "budget": {

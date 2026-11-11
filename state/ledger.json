@@ -185,12 +185,21 @@
       "E": 456.1919,
       "SPY": 483.1256,
       "date": "2026-11-10"
+    },
+    {
+      "A": 445.4975,
+      "B": 499.7117,
+      "C": 495.7719,
+      "D": 498.5088,
+      "E": 464.1205,
+      "SPY": 490.1733,
+      "date": "2026-11-11"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.460224,
+      "ai_cost": 0.468842,
       "cash": 66.217751,
       "checkin_level": 2,
       "penalty_paid": 4.158383,
@@ -218,7 +227,7 @@
       "unsettled": []
     },
     "B": {
-      "ai_cost": 0.445256,
+      "ai_cost": 0.454786,
       "cash": 425.467904,
       "checkin_level": 3,
       "penalty_paid": 5.289278,
@@ -236,88 +245,50 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.532464,
+      "ai_cost": 0.545522,
       "cash": 427.846217,
       "checkin_level": 5,
-      "penalty_paid": 0.123479,
-      "pending_orders": [
-        {
-          "client_id": "C-57f23edb44d1",
-          "confidence": 4,
-          "limit_price": 286.5,
-          "order_id": "f08200b1-2e31-41db-abeb-1aec95da357d",
-          "penalty_pct": 0.004193,
-          "qty": 0.2393,
-          "side": "sell",
-          "submitted": "2026-11-10T15:25:28.525126-05:00",
-          "symbol": "GOOGL"
-        }
-      ],
-      "positions": {
-        "GOOGL": {
-          "cost_basis": 69.653401,
-          "qty": 0.2393,
-          "reserved_qty": 0.2393
-        }
-      },
-      "realized_pnl": -2.500382,
+      "penalty_paid": 0.411788,
+      "pending_orders": [],
+      "positions": {},
+      "realized_pnl": -3.682587,
       "reserved": 0.0,
-      "trades": 3,
-      "unsettled": []
+      "trades": 4,
+      "unsettled": [
+        {
+          "amount": 68.471196,
+          "settles": "2026-11-12"
+        }
+      ]
     },
     "D": {
-      "ai_cost": 0.453596,
+      "ai_cost": 0.462556,
       "cash": 450.029275,
       "checkin_level": 5,
-      "penalty_paid": 0.028617,
-      "pending_orders": [
-        {
-          "client_id": "D-9a6f25b492f3",
-          "confidence": 3,
-          "limit_price": 17.05,
-          "order_id": "b0981ef4-7c78-4edc-bd94-3a9560483b53",
-          "penalty_pct": 0.001166,
-          "qty": 2.8571,
-          "side": "sell",
-          "submitted": "2026-11-10T15:25:28.525126-05:00",
-          "symbol": "KD"
-        }
-      ],
-      "positions": {
-        "KD": {
-          "cost_basis": 49.970725,
-          "qty": 2.8571,
-          "reserved_qty": 2.8571
-        }
-      },
-      "realized_pnl": 0.0,
+      "penalty_paid": 0.08575,
+      "pending_orders": [],
+      "positions": {},
+      "realized_pnl": -1.028593,
       "reserved": 0.0,
-      "trades": 1,
-      "unsettled": []
+      "trades": 2,
+      "unsettled": [
+        {
+          "amount": 48.942132,
+          "settles": "2026-11-12"
+        }
+      ]
     },
     "E": {
-      "ai_cost": 0.524924,
+      "ai_cost": 0.536074,
       "cash": 24.236067,
       "checkin_level": 1,
-      "penalty_paid": 0.820107,
-      "pending_orders": [
-        {
-          "client_id": "E-1a14e700b5ad",
-          "confidence": 3,
-          "limit_price": 673.5,
-          "order_id": "bbe34f78-b0d3-4a84-8383-9054102cb464",
-          "penalty_pct": 0.0005,
-          "qty": 0.1253,
-          "side": "sell",
-          "submitted": "2026-11-10T15:25:28.525126-05:00",
-          "symbol": "QQQ"
-        }
-      ],
+      "penalty_paid": 0.862343,
+      "pending_orders": [],
       "positions": {
         "QQQ": {
-          "cost_basis": 361.359024,
-          "qty": 0.5015,
-          "reserved_qty": 0.1253
+          "cost_basis": 271.07331,
+          "qty": 0.3762,
+          "reserved_qty": 0.0
         },
         "SPY": {
           "cost_basis": 96.845028,
@@ -325,10 +296,15 @@
           "reserved_qty": 0.0
         }
       },
-      "realized_pnl": -17.559881,
+      "realized_pnl": -23.414832,
       "reserved": 0.0,
-      "trades": 8,
-      "unsettled": []
+      "trades": 9,
+      "unsettled": [
+        {
+          "amount": 84.430763,
+          "settles": "2026-11-12"
+        }
+      ]
     }
   }
 }

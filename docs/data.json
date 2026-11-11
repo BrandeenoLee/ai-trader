@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 2,
-   "ai_cost": 0.4602,
+   "ai_cost": 0.4688,
    "positions": {
     "KO": {
      "cost_basis": 129.856461,
@@ -27,7 +27,7 @@
   "B": {
    "name": "Mean reversion",
    "level": 3,
-   "ai_cost": 0.4453,
+   "ai_cost": 0.4548,
    "positions": {
     "XOM": {
      "cost_basis": 76.260575,
@@ -41,40 +41,28 @@
   "C": {
    "name": "Catalyst reader",
    "level": 5,
-   "ai_cost": 0.5325,
-   "positions": {
-    "GOOGL": {
-     "cost_basis": 69.653401,
-     "qty": 0.2393,
-     "reserved_qty": 0.2393
-    }
-   },
+   "ai_cost": 0.5455,
+   "positions": {},
    "cash": 427.85,
-   "penalty_paid": 0.1235
+   "penalty_paid": 0.4118
   },
   "D": {
    "name": "Small-cap explorer",
    "level": 5,
-   "ai_cost": 0.4536,
-   "positions": {
-    "KD": {
-     "cost_basis": 49.970725,
-     "qty": 2.8571,
-     "reserved_qty": 2.8571
-    }
-   },
+   "ai_cost": 0.4626,
+   "positions": {},
    "cash": 450.03,
-   "penalty_paid": 0.0286
+   "penalty_paid": 0.0858
   },
   "E": {
    "name": "Claude's pick",
    "level": 1,
-   "ai_cost": 0.5249,
+   "ai_cost": 0.5361,
    "positions": {
     "QQQ": {
-     "cost_basis": 361.359024,
-     "qty": 0.5015,
-     "reserved_qty": 0.1253
+     "cost_basis": 271.07331,
+     "qty": 0.3762,
+     "reserved_qty": 0.0
     },
     "SPY": {
      "cost_basis": 96.845028,
@@ -83,7 +71,7 @@
     }
    },
    "cash": 24.24,
-   "penalty_paid": 0.8201
+   "penalty_paid": 0.8623
   }
  },
  "benchmark": "SPY",
@@ -261,13 +249,22 @@
    "date": "2026-11-06"
   },
   {
-   "date": "2026-11-10",
    "A": 444.1126,
    "B": 499.1046,
    "C": 496.0646,
    "D": 498.6035,
    "E": 456.1919,
-   "SPY": 483.1256
+   "SPY": 483.1256,
+   "date": "2026-11-10"
+  },
+  {
+   "date": "2026-11-11",
+   "A": 445.4975,
+   "B": 499.7117,
+   "C": 495.7719,
+   "D": 498.5088,
+   "E": 464.1205,
+   "SPY": 490.1733
   }
  ],
  "weekly": [
@@ -3227,6 +3224,110 @@
     "input_tokens": 3832,
     "output_tokens": 683
    }
+  },
+  {
+   "ts": "2026-11-11T20:08:10+00:00",
+   "kind": "fill",
+   "strategy": "C",
+   "symbol": "GOOGL",
+   "order_id": "f08200b1-2e31-41db-abeb-1aec95da357d",
+   "fill_price": 287.336,
+   "side": "sell",
+   "qty": 0.2393,
+   "eff_price": 286.131200152,
+   "proceeds": 68.47119619637361,
+   "pnl": -1.1822048036263908
+  },
+  {
+   "ts": "2026-11-11T20:08:10+00:00",
+   "kind": "fill",
+   "strategy": "D",
+   "symbol": "KD",
+   "order_id": "b0981ef4-7c78-4edc-bd94-3a9560483b53",
+   "fill_price": 17.15,
+   "side": "sell",
+   "qty": 2.8571,
+   "eff_price": 17.1300031,
+   "proceeds": 48.94213185701,
+   "pnl": -1.0285931429900046
+  },
+  {
+   "ts": "2026-11-11T20:08:10+00:00",
+   "kind": "fill",
+   "strategy": "E",
+   "symbol": "QQQ",
+   "order_id": "bbe34f78-b0d3-4a84-8383-9054102cb464",
+   "fill_price": 674.166,
+   "side": "sell",
+   "qty": 0.1253,
+   "eff_price": 673.828917,
+   "proceeds": 84.4307633001,
+   "pnl": -5.854950971485252
+  },
+  {
+   "ts": "2026-11-11T20:08:18+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "All three holdings (V, XLV, KO) are above entry and their 50-day averages, and no stops are near. The top 20-day names are extended or overlap with what I hold, so I'm holding and keeping about $66 in cash.",
+   "orders": [],
+   "cost": 0.00862,
+   "usage": {
+    "input_tokens": 3584,
+    "output_tokens": 145
+   }
+  },
+  {
+   "ts": "2026-11-11T20:08:20+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Hold XOM, which is above the 161 exit level and the 158 stop. No clean dip stands out: MSFT fell 2.4% on a day SPY rose 1.4%, which looks like stock-specific news, and NVDA's trend is broken.",
+   "orders": [],
+   "cost": 0.00953,
+   "usage": {
+    "input_tokens": 3460,
+    "output_tokens": 261
+   }
+  },
+  {
+   "ts": "2026-11-11T20:08:23+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 5/day",
+   "summary": "Holding cash: the +1.4% SPY rally is a broad tech/AI bounce, and I see no stock-specific catalyst that the market has mispriced.",
+   "orders": [],
+   "cost": 0.01306,
+   "usage": {
+    "input_tokens": 5189,
+    "output_tokens": 268
+   }
+  },
+  {
+   "ts": "2026-11-11T20:08:28+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 5/day",
+   "summary": "Hold: the 3\u201315% band is empty again. Every mover is a spike of 40% or more, a warrant, or fails the spread or volume screens, so there is nothing to buy.",
+   "orders": [],
+   "cost": 0.00896,
+   "usage": {
+    "input_tokens": 3830,
+    "output_tokens": 130
+   }
+  },
+  {
+   "ts": "2026-11-11T20:08:31+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "The QQQ sale filled and its $84 of proceeds hasn't settled yet, so I can't fund the SPY buy today and I'm holding.",
+   "orders": [],
+   "cost": 0.01115,
+   "usage": {
+    "input_tokens": 3865,
+    "output_tokens": 342
+   }
   }
  ],
  "spend": {
@@ -3243,14 +3344,14 @@
   },
   "2026-11": {
    "by_strategy": {
-    "A": 0.102486,
-    "B": 0.095566,
-    "C": 0.125164,
-    "D": 0.110534,
-    "E": 0.09854
+    "A": 0.111104,
+    "B": 0.105096,
+    "C": 0.138222,
+    "D": 0.119494,
+    "E": 0.10969
    },
-   "calls": 30,
-   "total": 0.53229
+   "calls": 35,
+   "total": 0.583606
   }
  },
  "budget": {

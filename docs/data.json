@@ -3,7 +3,7 @@
   "A": {
    "name": "Momentum",
    "level": 2,
-   "ai_cost": 0.4688,
+   "ai_cost": 0.4773,
    "positions": {
     "KO": {
      "cost_basis": 129.856461,
@@ -27,7 +27,7 @@
   "B": {
    "name": "Mean reversion",
    "level": 3,
-   "ai_cost": 0.4548,
+   "ai_cost": 0.4629,
    "positions": {
     "XOM": {
      "cost_basis": 76.260575,
@@ -41,23 +41,23 @@
   "C": {
    "name": "Catalyst reader",
    "level": 5,
-   "ai_cost": 0.5455,
+   "ai_cost": 0.5579,
    "positions": {},
-   "cash": 427.85,
+   "cash": 496.32,
    "penalty_paid": 0.4118
   },
   "D": {
    "name": "Small-cap explorer",
    "level": 5,
-   "ai_cost": 0.4626,
+   "ai_cost": 0.4715,
    "positions": {},
-   "cash": 450.03,
+   "cash": 498.97,
    "penalty_paid": 0.0858
   },
   "E": {
    "name": "Claude's pick",
    "level": 1,
-   "ai_cost": 0.5361,
+   "ai_cost": 0.5486,
    "positions": {
     "QQQ": {
      "cost_basis": 271.07331,
@@ -70,7 +70,7 @@
      "reserved_qty": 0.0
     }
    },
-   "cash": 24.24,
+   "cash": 108.67,
    "penalty_paid": 0.8623
   }
  },
@@ -258,13 +258,22 @@
    "date": "2026-11-10"
   },
   {
-   "date": "2026-11-11",
    "A": 445.4975,
    "B": 499.7117,
    "C": 495.7719,
    "D": 498.5088,
    "E": 464.1205,
-   "SPY": 490.1733
+   "SPY": 490.1733,
+   "date": "2026-11-11"
+  },
+  {
+   "date": "2026-11-12",
+   "A": 444.741,
+   "B": 501.5513,
+   "C": 495.7595,
+   "D": 498.4999,
+   "E": 462.2317,
+   "SPY": 488.1583
   }
  ],
  "weekly": [
@@ -3328,6 +3337,81 @@
     "input_tokens": 3865,
     "output_tokens": 342
    }
+  },
+  {
+   "ts": "2026-11-12T20:45:29+00:00",
+   "kind": "decision",
+   "strategy": "A",
+   "slot": "slot 1, check-in level 2/day",
+   "summary": "Hold V, XLV and KO: all are above entry and their 50-day averages, no stops are near, and the top 20-day names are extended or overlap with holdings.",
+   "orders": [],
+   "cost": 0.00841,
+   "usage": {
+    "input_tokens": 3585,
+    "output_tokens": 124
+   }
+  },
+  {
+   "ts": "2026-11-12T20:45:30+00:00",
+   "kind": "decision",
+   "strategy": "B",
+   "slot": "slot 1, check-in level 3/day",
+   "summary": "Hold XOM (170.06, above the 161 exit level and 158 stop, below the 175 target); no clean intact-trend dip worth the spread cost today.",
+   "orders": [],
+   "cost": 0.00815,
+   "usage": {
+    "input_tokens": 3455,
+    "output_tokens": 124
+   }
+  },
+  {
+   "ts": "2026-11-12T20:45:32+00:00",
+   "kind": "decision",
+   "strategy": "C",
+   "slot": "slot 1, check-in level 5/day",
+   "summary": "Holding cash: the Nvidia/Huang exit is a sector-wide shock with new negative headlines still arriving, and the AMD/AVGO gains are a rotation after +44% and +24% in 5 days. Best underreaction candidate is GOOGL (+2.0% on the AI power pledge story), but that isn't a clear mispricing.",
+   "orders": [],
+   "cost": 0.01237,
+   "usage": {
+    "input_tokens": 5257,
+    "output_tokens": 186
+   }
+  },
+  {
+   "ts": "2026-11-12T20:45:37+00:00",
+   "kind": "decision",
+   "strategy": "D",
+   "slot": "slot 1, check-in level 5/day",
+   "summary": "Hold: the 3\u201315% band is empty again. Every mover is a spike of 40% or more, a warrant, or fails the spread or volume screens (XLAB is up 127%, which is too extreme).",
+   "orders": [],
+   "cost": 0.00893,
+   "usage": {
+    "input_tokens": 3782,
+    "output_tokens": 137
+   }
+  },
+  {
+   "ts": "2026-11-12T20:45:41+00:00",
+   "kind": "decision",
+   "strategy": "E",
+   "slot": "slot 1, check-in level 1/day",
+   "summary": "The QQQ sale proceeds have settled, so I'm buying SPY with the idle cash to finish the weak-regime rebalance (QQQ ~55%, SPY ~40%).",
+   "orders": [
+    {
+     "action": "buy",
+     "symbol": "SPY",
+     "amount_usd": 88,
+     "limit_price": 759.0,
+     "confidence": 3,
+     "reasoning": "Complete the weekly regime rebalance: the QQQ sale proceeds have settled, so I'm buying SPY toward the ~40% target.",
+     "result": "rejected: amount cut to $0.00 by the 15% position cap; order too small after limits"
+    }
+   ],
+   "cost": 0.01251,
+   "usage": {
+    "input_tokens": 3980,
+    "output_tokens": 455
+   }
   }
  ],
  "spend": {
@@ -3344,14 +3428,14 @@
   },
   "2026-11": {
    "by_strategy": {
-    "A": 0.111104,
-    "B": 0.105096,
-    "C": 0.138222,
-    "D": 0.119494,
-    "E": 0.10969
+    "A": 0.119514,
+    "B": 0.113246,
+    "C": 0.150596,
+    "D": 0.128428,
+    "E": 0.1222
    },
-   "calls": 35,
-   "total": 0.583606
+   "calls": 40,
+   "total": 0.633984
   }
  },
  "budget": {

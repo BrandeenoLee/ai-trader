@@ -194,12 +194,21 @@
       "E": 464.1205,
       "SPY": 490.1733,
       "date": "2026-11-11"
+    },
+    {
+      "A": 444.741,
+      "B": 501.5513,
+      "C": 495.7595,
+      "D": 498.4999,
+      "E": 462.2317,
+      "SPY": 488.1583,
+      "date": "2026-11-12"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.468842,
+      "ai_cost": 0.477252,
       "cash": 66.217751,
       "checkin_level": 2,
       "penalty_paid": 4.158383,
@@ -227,7 +236,7 @@
       "unsettled": []
     },
     "B": {
-      "ai_cost": 0.454786,
+      "ai_cost": 0.462936,
       "cash": 425.467904,
       "checkin_level": 3,
       "penalty_paid": 5.289278,
@@ -245,8 +254,8 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.545522,
-      "cash": 427.846217,
+      "ai_cost": 0.557896,
+      "cash": 496.317413,
       "checkin_level": 5,
       "penalty_paid": 0.411788,
       "pending_orders": [],
@@ -254,16 +263,11 @@
       "realized_pnl": -3.682587,
       "reserved": 0.0,
       "trades": 4,
-      "unsettled": [
-        {
-          "amount": 68.471196,
-          "settles": "2026-11-12"
-        }
-      ]
+      "unsettled": []
     },
     "D": {
-      "ai_cost": 0.462556,
-      "cash": 450.029275,
+      "ai_cost": 0.47149,
+      "cash": 498.971407,
       "checkin_level": 5,
       "penalty_paid": 0.08575,
       "pending_orders": [],
@@ -271,16 +275,11 @@
       "realized_pnl": -1.028593,
       "reserved": 0.0,
       "trades": 2,
-      "unsettled": [
-        {
-          "amount": 48.942132,
-          "settles": "2026-11-12"
-        }
-      ]
+      "unsettled": []
     },
     "E": {
-      "ai_cost": 0.536074,
-      "cash": 24.236067,
+      "ai_cost": 0.548584,
+      "cash": 108.66683,
       "checkin_level": 1,
       "penalty_paid": 0.862343,
       "pending_orders": [],
@@ -299,12 +298,7 @@
       "realized_pnl": -23.414832,
       "reserved": 0.0,
       "trades": 9,
-      "unsettled": [
-        {
-          "amount": 84.430763,
-          "settles": "2026-11-12"
-        }
-      ]
+      "unsettled": []
     }
   }
 }

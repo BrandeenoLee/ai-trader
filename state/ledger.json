@@ -203,12 +203,21 @@
       "E": 462.2317,
       "SPY": 488.1583,
       "date": "2026-11-12"
+    },
+    {
+      "A": 448.4636,
+      "B": 501.5182,
+      "C": 495.7475,
+      "D": 498.4911,
+      "E": 458.7079,
+      "SPY": 485.7016,
+      "date": "2026-11-13"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.477252,
+      "ai_cost": 0.48579,
       "cash": 66.217751,
       "checkin_level": 2,
       "penalty_paid": 4.158383,
@@ -236,7 +245,7 @@
       "unsettled": []
     },
     "B": {
-      "ai_cost": 0.462936,
+      "ai_cost": 0.471176,
       "cash": 425.467904,
       "checkin_level": 3,
       "penalty_paid": 5.289278,
@@ -254,7 +263,7 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.557896,
+      "ai_cost": 0.569894,
       "cash": 496.317413,
       "checkin_level": 5,
       "penalty_paid": 0.411788,
@@ -266,7 +275,7 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.47149,
+      "ai_cost": 0.48034,
       "cash": 498.971407,
       "checkin_level": 5,
       "penalty_paid": 0.08575,
@@ -278,11 +287,24 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.548584,
-      "cash": 108.66683,
+      "ai_cost": 0.561606,
+      "cash": 44.67598,
       "checkin_level": 1,
       "penalty_paid": 0.862343,
-      "pending_orders": [],
+      "pending_orders": [
+        {
+          "client_id": "E-d6d5cd39f641",
+          "confidence": 5,
+          "limit_price": 755.5,
+          "order_id": "ed9c262a-e081-4db2-b0d3-9a213b6a0bdf",
+          "penalty_pct": 0.0005,
+          "qty": 0.0847,
+          "reserved_cash": 63.990849999999995,
+          "side": "buy",
+          "submitted": "2026-11-13T15:26:24.223911-05:00",
+          "symbol": "SPY"
+        }
+      ],
       "positions": {
         "QQQ": {
           "cost_basis": 271.07331,
@@ -296,7 +318,7 @@
         }
       },
       "realized_pnl": -23.414832,
-      "reserved": 0.0,
+      "reserved": 63.99085,
       "trades": 9,
       "unsettled": []
     }

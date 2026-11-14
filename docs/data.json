@@ -2,8 +2,8 @@
  "strategies": {
   "A": {
    "name": "Momentum",
-   "level": 2,
-   "ai_cost": 0.4858,
+   "level": 1,
+   "ai_cost": 0.5296,
    "positions": {
     "KO": {
      "cost_basis": 129.856461,
@@ -26,8 +26,8 @@
   },
   "B": {
    "name": "Mean reversion",
-   "level": 3,
-   "ai_cost": 0.4712,
+   "level": 2,
+   "ai_cost": 0.5184,
    "positions": {
     "XOM": {
      "cost_basis": 76.260575,
@@ -40,24 +40,24 @@
   },
   "C": {
    "name": "Catalyst reader",
-   "level": 5,
-   "ai_cost": 0.5699,
+   "level": 4,
+   "ai_cost": 0.6231,
    "positions": {},
    "cash": 496.32,
    "penalty_paid": 0.4118
   },
   "D": {
    "name": "Small-cap explorer",
-   "level": 5,
-   "ai_cost": 0.4803,
+   "level": 4,
+   "ai_cost": 0.5326,
    "positions": {},
    "cash": 498.97,
    "penalty_paid": 0.0858
   },
   "E": {
    "name": "Claude's pick",
-   "level": 1,
-   "ai_cost": 0.5616,
+   "level": 2,
+   "ai_cost": 0.6154,
    "positions": {
     "QQQ": {
      "cost_basis": 271.07331,
@@ -65,13 +65,13 @@
      "reserved_qty": 0.0
     },
     "SPY": {
-     "cost_basis": 96.845028,
-     "qty": 0.1261,
+     "cost_basis": 160.677712,
+     "qty": 0.2108,
      "reserved_qty": 0.0
     }
    },
-   "cash": 44.68,
-   "penalty_paid": 0.8623
+   "cash": 44.83,
+   "penalty_paid": 0.8942
   }
  },
  "benchmark": "SPY",
@@ -277,12 +277,12 @@
   },
   {
    "date": "2026-11-13",
-   "A": 448.4636,
-   "B": 501.5182,
+   "A": 448.5388,
+   "B": 501.7883,
    "C": 495.7475,
    "D": 498.4911,
-   "E": 458.7079,
-   "SPY": 485.7016
+   "E": 457.4817,
+   "SPY": 484.9472
   }
  ],
  "weekly": [
@@ -846,6 +846,117 @@
     }
    ],
    "month_spend": 0.475074
+  },
+  {
+   "date": "2026-11-13",
+   "benchmark": {
+    "week_ret": 2.1764262801097667,
+    "total_ret": -3.0105599999999955
+   },
+   "strategies": {
+    "A": {
+     "week_ret": 1.923541006076701,
+     "total_ret": -10.292240000000008,
+     "vs_spy": -7.281680000000013,
+     "trades": 0,
+     "ai_cost_week": 0.07794999999999999,
+     "self_assessment": "+1.92% vs SPY +2.18%: holdings were solid, but $66 of idle cash cost us the week. Next step is to deploy into XLI/XLF if either qualifies.",
+     "confidence_beat_spy": 4,
+     "level": 1
+    },
+    "B": {
+     "week_ret": 0.4102950766791791,
+     "total_ret": 0.357659999999993,
+     "vs_spy": 3.3682199999999884,
+     "trades": 0,
+     "ai_cost_week": 0.081912,
+     "self_assessment": "+0.41% vs SPY +2.18%: protected the lead but sat in cash through the rebound; notes changed to put cash to work on relative-weakness dips.",
+     "confidence_beat_spy": 3,
+     "level": 2
+    },
+    "C": {
+     "week_ret": 0.0477486973545993,
+     "total_ret": -0.8504999999999985,
+     "vs_spy": 2.160059999999997,
+     "trades": 1,
+     "ai_cost_week": 0.104682,
+     "self_assessment": "Followed the rules (time-stop exit, sat out the chip shock) but held cash through a +2.2% SPY week; still +2.2% ahead of SPY since start.",
+     "confidence_beat_spy": 4,
+     "level": 4
+    },
+    "D": {
+     "week_ret": 0.4598260331223125,
+     "total_ret": -0.30177999999999594,
+     "vs_spy": 2.7087799999999995,
+     "trades": 1,
+     "ai_cost_week": 0.09028800000000001,
+     "self_assessment": "Exited KD on its time stop for a small loss and held cash otherwise. We trailed SPY this week but are still ahead since start because of cash, not stock picking.",
+     "confidence_beat_spy": 3,
+     "level": 4
+    },
+    "E": {
+     "week_ret": 2.572233359259557,
+     "total_ret": -8.503660000000002,
+     "vs_spy": -5.493100000000006,
+     "trades": 2,
+     "ai_cost_week": 0.10497400000000001,
+     "self_assessment": "Beat SPY by 0.4 points this week (+2.57% vs +2.18%); the rebalance is done and leftover cash goes into IVV next. Still 5.5 points behind SPY since the start.",
+     "confidence_beat_spy": 4,
+     "level": 2
+    }
+   },
+   "confidence": {
+    "1-4": {
+     "n": 6,
+     "avg": -0.13455745667722577
+    },
+    "5-7": {
+     "n": 13,
+     "avg": -4.226590177177211
+    },
+    "8-10": {
+     "n": 2,
+     "avg": -6.245490176305202
+    }
+   },
+   "e_confidence_log": [
+    {
+     "week": "2026-10-09",
+     "confidence": 4,
+     "beat": false
+    },
+    {
+     "week": "2026-10-09",
+     "confidence": 4,
+     "beat": true
+    },
+    {
+     "week": "2026-10-16",
+     "confidence": 4,
+     "beat": false
+    },
+    {
+     "week": "2026-10-23",
+     "confidence": 4,
+     "beat": false
+    },
+    {
+     "week": "2026-10-30",
+     "confidence": 4,
+     "beat": false
+    },
+    {
+     "week": "2026-11-06",
+     "confidence": 4,
+     "beat": true
+    },
+    {
+     "week": "2026-11-13",
+     "confidence": 4,
+     "beat": null
+    }
+   ],
+   "month_spend": 0.934888
   }
  ],
  "journal": [
@@ -3496,6 +3607,63 @@
     "input_tokens": 3956,
     "output_tokens": 511
    }
+  },
+  {
+   "ts": "2026-11-14T01:29:01+00:00",
+   "kind": "fill",
+   "strategy": "E",
+   "symbol": "SPY",
+   "order_id": "ed9c262a-e081-4db2-b0d3-9a213b6a0bdf",
+   "fill_price": 753.256,
+   "side": "buy",
+   "qty": 0.0847,
+   "eff_price": 753.632628,
+   "cost": 63.832683591599995
+  },
+  {
+   "ts": "2026-11-14T01:29:17+00:00",
+   "kind": "review",
+   "strategy": "A",
+   "lessons": "Holding V, XLV and KO worked. All three rose and stayed above entry and their 50d averages, and making no trades meant no spread cost. We still trailed SPY by 0.26%, mostly because about 13% of capital sat in cash. The trader skipped deployment because the top 20d names were extended or overlapped, but the rules never required a top-ranked name. The notes now say to work down the ranked list and give specific candidates to check. Tournament data still shows low-confidence buys doing best, so the cap at 5 stays.",
+   "self_assessment": "+1.92% vs SPY +2.18%: holdings were solid, but $66 of idle cash cost us the week. Next step is to deploy into XLI/XLF if either qualifies.",
+   "confidence_beat_spy": 4,
+   "cost": 0.0438
+  },
+  {
+   "ts": "2026-11-14T01:29:36+00:00",
+   "kind": "review",
+   "strategy": "B",
+   "lessons": "Staying in cash protected the lead in the selloff, but in a +2.2% SPY week it gave back about 1.8 pts. The trader made no buys despite a rule to deploy cash, because it insisted on absolute dips in a rising market and skipped MSFT's relative drop as \"probably news\" without checking. The notes now count relative-weakness dips, require an actual news check before skipping, and add an anti-idle rule that forces a small conf-3 entry after 3 days under-invested. XOM is still flat near the fill with its time stop on 11/20. The tournament data still shows low confidence doing best.",
+   "self_assessment": "+0.41% vs SPY +2.18%: protected the lead but sat in cash through the rebound; notes changed to put cash to work on relative-weakness dips.",
+   "confidence_beat_spy": 3,
+   "cost": 0.04719
+  },
+  {
+   "ts": "2026-11-14T01:29:54+00:00",
+   "kind": "review",
+   "strategy": "C",
+   "lessons": "The time stop worked as written: GOOGL was exited at session 3 with no extension, for about a \u22121.7% loss. After that the trader sat in cash all week. The sector-shock reasoning was sound, but in a +2.2% SPY week cash cost about 2% of relative return. Underreaction candidates were named every session, but none were material, so I've added a small trial: after 3 straight cash sessions in a rising market, take a conf-3 starter on the best truly material underreaction. Confidence is still inverted across the tournament, so the low cap stays.",
+   "self_assessment": "Followed the rules (time-stop exit, sat out the chip shock) but held cash through a +2.2% SPY week; still +2.2% ahead of SPY since start.",
+   "confidence_beat_spy": 4,
+   "cost": 0.05321
+  },
+  {
+   "ts": "2026-11-14T01:30:15+00:00",
+   "kind": "review",
+   "strategy": "D",
+   "lessons": "Our one trade, KD, exited cleanly on its pre-set time stop, about -2%. That kept the loss small, and following the exit mechanically was the right call. The rest of the week was cash because the 3\u201315% band was empty again (5 weeks running), so we made +0.46% while SPY made +2.18%. The screens aren't changing because loosening them after one quiet week would be overfitting. The tournament data again shows low-confidence buys losing the least, so the default stays at 3.",
+   "self_assessment": "Exited KD on its time stop for a small loss and held cash otherwise. We trailed SPY this week but are still ahead since start because of cash, not stock picking.",
+   "confidence_beat_spy": 3,
+   "cost": 0.05225
+  },
+  {
+   "ts": "2026-11-14T01:30:38+00:00",
+   "kind": "review",
+   "strategy": "E",
+   "lessons": "We finished the weak-regime rebalance and beat SPY by 0.4 points this week (+2.57% vs +2.18%). That's mostly QQQ beta in an up week. The conf-3 SPY buy was rejected because the 15% position cap cut it to $0, which cost a day and left cash idle. About 10% is still in cash because SPY is near the conf-5 cap of about 35%. Fix: treat confidence as a cap setting (use conf 5 for required index buys) and put extra S&P exposure into IVV/VOO.",
+   "self_assessment": "Beat SPY by 0.4 points this week (+2.57% vs +2.18%); the rebalance is done and leftover cash goes into IVV next. Still 5.5 points behind SPY since the start.",
+   "confidence_beat_spy": 4,
+   "cost": 0.0538
   }
  ],
  "spend": {
@@ -3512,14 +3680,14 @@
   },
   "2026-11": {
    "by_strategy": {
-    "A": 0.128052,
-    "B": 0.121486,
-    "C": 0.162594,
-    "D": 0.137278,
-    "E": 0.135222
+    "A": 0.171852,
+    "B": 0.168678,
+    "C": 0.215806,
+    "D": 0.189526,
+    "E": 0.189026
    },
-   "calls": 45,
-   "total": 0.684632
+   "calls": 50,
+   "total": 0.934888
   }
  },
  "budget": {
@@ -3527,10 +3695,10 @@
   "cap": 20.0
  },
  "notes": {
-  "A": "# Strategy A notes: Momentum\n\n## Entry rules\n- Buy names with positive 20-day AND 60-day returns that trade above their 50-day average.\n- Rank by 60d trend first, then 20d. No holding is \"core\". Every position follows the same rules.\n- Skip any name with a single-day spike of more than 5%.\n- A name more than 15% above its 50d average is extended. Skip it.\n- Hold at most 1 name from the high-beta tech/semis cluster (AMD, META and PLTR caused the biggest losses).\n- Prefer sector ETFs (XLV, XLI, XLF, XLP, XLE) or large low-beta leaders (V, MA, KO). Spreads are tighter.\n- Don't buy a name that overlaps a current holding (e.g. XLP while holding KO).\n\n## Sizing\n- Hold 3-4 positions, keeping $15-25 in cash. Right now about $65 is idle. Deploy about $45 into one qualifying name from a sector we don't hold (industrials or financials preferred). If nothing qualifies, hold the cash rather than force a trade.\n- Use confidence 4-5. Never go above 5. Tournament data: 1-4 averaged -1.47% (n=6), 5-7 averaged -5.49% (n=12), 8-10 averaged -8.61% (n=2). Higher confidence keeps doing worse.\n\n## Exits and rotation\n- Hard stop: sell at 8% below entry. The XLE stop filled at -9.2% because the check came a day late. Write the stop price for each holding below and check it every day.\n- Early warning: sell at -6% or worse if the name is also below its 50d average, has a negative 20d return, or has dropped out of the 20d leaders. Once a holding drops out of the 20d leaders, treat -5% as the trigger. XLE dropped out and kept sliding.\n- Rotate out when a holding closes below its 50d average, or when its 20d return turns negative and it drops out of the top names.\n- Hold at least 3 trading days unless a stop triggers.\n- Spread penalties are now $4.16, about 0.8% of capital. Make at most one trade per day. Only rotate into a clearly higher-ranked name.\n- Don't take profits just because a position is up.\n\n## Levels (entry / -6% / -8% stop)\n- XLV: 184.48 / 173.41 / 169.72\n- KO: 96.00 / 90.24 / 88.32\n- V: take the entry price from the position record and compute both levels on the first day.\n\n## Status\n- Week: -2.28% vs SPY -2.64% (beat SPY). Since start: -11.99% vs SPY -5.08%.\n- Holding V, XLV and KO, a defensive mix that suits a falling market. Let the rules run and don't chase a rebound in extended tech.\n",
-  "B": "# Strategy B notes: Mean reversion\n\n## Status\n- Since start: -0.05% vs SPY -5.08%. Mostly cash; the only position is XOM (~$76, about 15% of the account).\n- Open trade: XOM 0.4501 filled @169.43. Stop 158 (-6.7%), take profit 175 (+3.3%), time stop 11/20. Check all three at the start of every decision. Because the fill came in about 1.7% above the limit, the exit levels are now lopsided. If XOM closes below ~161 (-5% from the fill), exit.\n\n## Entry setup (core)\n- Look for liquid names with a sharp 5-day drop of about 2x their normal 5-day move or more, with the 60-day trend intact and price near or above its 50d MA.\n- Skip drops caused by clear bad news: earnings misses, guidance cuts, or sector-wide shocks.\n- During a broad selloff, wait for a stabilization day (SPY up, or the 5-day drop stops getting worse). Then make one small entry per day at most.\n\n## Deploying cash\n- Cash protected the lead, but it can't beat SPY in a rebound. On each new stabilization day, add one more intact-trend dip from a different sector than the current holdings (financials, healthcare, staples, industrials). Target 2-4 positions and 40-60% of the account invested, built up over several days.\n- If SPY makes a new -3% or worse day, pause new buys. Keep the existing positions unless their stops are hit.\n\n## Costs and orders\n- Spread penalties are now $5.29 (~1.06% of the account). Trade only large, tight-spread names, with each position \u2265 ~$70.\n- Fills come in 1-3% worse than the limit. Set the limit at or slightly below the last price. **Recompute the stop and take profit from the actual fill price.** Skip a trade if the bounce left from a realistic fill is under ~3%.\n\n## Exits (mechanical)\n- Write down the stop, take profit and time stop at entry and re-base them on the fill.\n- On the time-stop date, sell that day (NVDA lesson: holding past it cost about $3).\n- Exit if price closes at or below the stop, or is within ~1% of it on a down-market day. Exit right away on bad news.\n- Defaults: take profit about +5% from the fill, cut at -5%, time stop about 10 trading days.\n\n## Confidence\n- Tournament data: conf 1-4 averaged -1.47% (6 buys), 5-7 averaged -5.49% (12), 8-10 averaged -8.61% (2). Higher confidence keeps doing worse.\n- Default buys to conf 3. Use 4-5 only for a textbook setup after stabilization with a clean news check. Never go above 5.\n",
-  "C": "# Strategy C notes: Catalyst reader\n\n## Identity\nTrade only when a specific headline explains a price move, or explains why a stock didn't move. Look for over- and under-reactions. Holding cash is allowed. Most of the lead over SPY (\u22120.90% vs SPY \u22125.08% since start) comes from holding cash in falling weeks. That isn't catalyst skill, and it will lag in a rising week.\n\n## Entry rules\n- Each session, name the best catalyst setup and give it a verdict: (a) what the news changes over 12 months, (b) whether the move is bigger than that, (c) buy, or hold with a specific reason.\n- **Watchlist carry-forward:** check every flagged-but-skipped overreaction first, every session. This worked in W5 (GOOGL was revisited and bought). Drop a name after 5 sessions or if the thesis breaks.\n- **Overreaction (>5% on specific news):** buy only after a green close that also **beats SPY by at least 1% that day**, or a full session holding above the prior low. A green day that comes from a broad rally isn't stock-specific confirmation (W5 GOOGL was bought on a midterm rally day, then fell with the sector).\n- **No headline, no trade.** Skip big moves that no news explains.\n- **Underreaction:** concrete material news with less than a 1% move. Log one named candidate **every session**. It was skipped on most W5 days, and it's the only way to make money in up weeks.\n- Prefer single-company catalysts. Stay out while a sector or macro selloff keeps adding bad news. Don't buy into structural downtrends or real fundamental damage.\n\n## Data hygiene\n- If every price shows 0.0%, the data is stale: hold, and say so.\n\n## Sizing and confidence\n- Tournament results: confidence 1\u20134 avg \u22121.47% (n=6), 5\u20137 \u22125.49% (n=12), 8\u201310 \u22128.61% (n=2). Higher confidence has done worse every week so far.\n- Starters use confidence 3\u20134. Never go above 6. Add only after a further confirmed close that beats SPY. Hold at most 2 positions.\n\n## Exits\n- **Time stop, applied strictly:** session 1 is the fill day. If the position is below cost at the end of session 3, exit at the next decision. Don't grant extensions; in W5 the trader gave GOOGL \"one more session\".\n- **Thesis break:** if new negative news widens the story, exit or cut by half.\n- **Take profit** once about half the overreaction has retraced.\n\n## Log\n- W1: 0 trades, \u22120.01% vs SPY +0.68%.\n- W2: \u22120.83% vs SPY \u22121.96%. Bought SMH too early.\n- W3: +0.30% vs SPY \u22120.42%. SMH time-stop exit \u22122.8%.\n- W4: \u22120.02% vs SPY \u22120.54%. 0 trades, and flagged names were never followed up.\n- W5: \u22120.33% vs SPY \u22122.64%. GOOGL starter (conf 4) @291.07 bought on a broad-rally green day, now about \u22122%. Due for a time-stop exit if still below cost.\n",
-  "D": "# Strategy D notes: Small-cap explorer\n\nIdentity: find tradable small-cap opportunities that SPY doesn't capture. Record: 1 trade in 6 weeks (KD, Tier 3 starter). We're at -0.76% since start and SPY is at -5.08%. Most of that gap comes from sitting in cash. It is not edge yet.\n\n## Open position: KD (2.8571 sh, entry 17.49)\n- Stop: sell on a close below 15.2. Target: about 22, which is 2x risk.\n- Time stop: if neither stop nor target has hit, sell at the 11/10 close (3 sessions after the fill). Don't extend the hold or add to it.\n\n## What the data looks like\n- The mover list shows extremes: \u00b125% or more, warrants, illiquid names, and leveraged ETFs. The 3\u201315% band has been empty for 4 weeks. If it's empty, say so in one line.\n- The day's range is often not shown.\n\n## Screening\n- Drop warrants, units, rights, leveraged or inverse ETFs, anything under $0.50, volume under $1M, spreads over 1.5%, and moves of \u00b140% or more. Don't comment on them.\n- Tier 1: names moving \u00b13\u201315% with a spread of 1.5% or less and real volume.\n- Tier 2 (watchlist): liquid names moving 15\u201340%. Buy only on day-2 continuation or a stabilized 30\u201350% pullback. If the name isn't visible the next day, drop it.\n- Tier 3 (day-1 starter, max 1 per week): an up-move of 15\u201335%, spread \u22640.5%, volume \u2265$10M, and a news catalyst. If the day's range can't be seen, the trade is still allowed, but put the limit about 3\u20135% below the close instead of at it. KD filled at the full price the next day while SPY fell 4% and dropped 7% right away. Confidence 3, smallest size, stop at the midpoint between the prior close and entry, target 2x risk, max hold 3 sessions.\n- No new entries on days SPY is down 2% or more.\n\n## Entry and sizing\n- Confidence 3\u20134, max 2 names, limit orders only. Don't chase.\n- The expected move must be at least 3x the spread.\n\n## Exits\n- Set the stop, target and time stop before buying. Follow them mechanically and don't hold through binary events.\n\n## Confidence\n- Tournament-wide: buys at 1\u20134 averaged -1.47% (n=6), 5\u20137 averaged -5.49% (n=12), 8\u201310 averaged -8.61% (n=2). That makes 2 weeks in a row where higher confidence went with worse results.\n- Default is 3. Use 5 only with a fresh catalyst, spread \u22641%, and a clean chart. Never use 6 or higher.\n",
-  "E": "# Strategy E: Claude's pick: QQQ/SPY core, lower tilt in drawdowns, very few trades\n\n## Approach\nQQQ held against SPY is a beta/tech bet, not a proven edge. Since the start we are -10.8% vs SPY -5.1%. Most of that gap comes from QQQ falling harder in tech-led selloffs plus the earlier META earnings loss. Not trading saves spread but doesn't create alpha by itself. Keep the tilt, but make it smaller while the market is weak.\n\n## Target allocation (rebalance at most once per week, only if more than 7 points off target)\n- **SPY below its 50-day average (or can't verify): QQQ about 55%, SPY about 40%, cash 5% or less.** That applies now. Make ONE rebalance trade this week: sell QQQ, buy SPY.\n- SPY above its 50-day on 3 consecutive verified closes: go back to QQQ about 70%, SPY about 25%.\n- If a rule's data can't be verified, do nothing on that rule. Don't keep re-citing unverifiable rules.\n\n## Single stocks\n- Only while SPY is above its 50-day. At most 1 per week, sized 10%, funded from SPY.\n- Must be a US large cap (over $10B) with average daily volume over $50M. Price must be above a rising 50-day, and the 50-day above the 200-day. Skip anything up more than 15% in 3 days.\n- Never hold one within 5 trading days of earnings. Sell it 2 sessions before the report.\n- Exits: a close 8% below entry, or 2 closes more than 2% below the 50-day. Proceeds go to SPY.\n\n## Orders\n- Limit price: last to +0.3%. If an order expires twice, drop it. No trades under $25. Sweep cash only once it exceeds 8%.\n\n## Confidence\n- Higher confidence has done worse. Tournament-wide: conf 1-4 averaged -1.5%, conf 5-7 -5.5%, conf 8-10 -8.6%. Treat confidence as a log entry only. Always use the minimum size and never size up on conviction.\n\n## Habits\n- The default is HOLD apart from the regime rebalance above. 0-1 trades per week. Log a one-line reason for each trade.\n"
+  "A": "# Strategy A notes: Momentum\n\n## Entry rules\n- Buy names with positive 20-day AND 60-day returns that trade above their 50-day average.\n- Rank by 60d trend first, then 20d. No holding is \"core\". Every position follows the same rules.\n- Skip any name with a single-day spike of more than 5%.\n- A name more than 15% above its 50d average is extended. Skip it.\n- Hold at most 1 name from the high-beta tech/semis cluster (AMD, META and PLTR caused the biggest losses).\n- Prefer sector ETFs (XLV, XLI, XLF, XLP, XLE) or large low-beta leaders (V, MA, KO). Spreads are tighter.\n- Don't buy a name that overlaps a current holding (e.g. XLP while holding KO).\n- A name does NOT have to be a top-20d leader to qualify. If the leaders are extended or overlap, work down the list to the first name that passes every rule above.\n\n## Sizing\n- Hold 3-4 positions, keeping $15-25 in cash. About $66 (around 13%) sat idle all last week, and that cash drag is most of why we lagged SPY in an up week.\n- This week: on the first day, check XLI and XLF (then MA) against the entry rules. Deploy about $45 into the first one that passes. Hold cash only if none of them pass, and write down which rule each one failed.\n- Use confidence 4-5. Never go above 5. Tournament data: 1-4 averaged -0.13% (n=6), 5-7 averaged -4.23% (n=13), 8-10 averaged -6.25% (n=2). Higher confidence keeps doing worse.\n\n## Exits and rotation\n- Hard stop: sell at 8% below entry. Check it every day. The XLE stop filled late, at -9.2%.\n- Early warning: sell at -6% if the name is also below its 50d average, has a negative 20d return, or has dropped out of the leaders. Once a holding has dropped out of the leaders, the trigger is -5%.\n- Rotate out when a holding closes below its 50d average, or when its 20d return turns negative and it drops out of the top names.\n- Hold at least 3 trading days unless a stop triggers.\n- Spread penalties total $4.16. Make at most one trade per day, and only rotate into a clearly higher-ranked name.\n- Don't take profits just because a position is up.\n\n## Levels (entry / -6% / -8% stop)\n- XLV: 184.48 / 173.41 / 169.72\n- KO: 96.00 / 90.24 / 88.32\n- V: still missing. On day 1, take the entry from the position record, compute both levels and write them in your journal.\n\n## Status\n- Week: +1.92% vs SPY +2.18% (lagged slightly). Since start: -10.29% vs SPY -3.01%.\n- All holdings are above entry and above their 50d averages. Let them run, and fix the idle cash.\n",
+  "B": "# Strategy B notes: Mean reversion\n\n## Status\n- Since start: +0.36% vs SPY -3.01% (lead about 3.4 pts, down from about 5). This week: +0.41% vs SPY +2.18%. Sitting mostly in cash during the rebound cost about 1.8 pts.\n- Open trade: XOM 0.4501 filled @169.43, last price about 170. Take profit 175. Exit on a close at or below 161. Hard stop 158. **Time stop 11/20: sell that day if 175 hasn't hit.** Check all three at the start of every decision.\n\n## Entry setup (core)\n- Look for liquid large caps with a sharp 5-day drop of about 2x their normal 5-day move, 60-day trend intact, and price near or above its 50d MA.\n- **Relative-weakness dips count too.** In a rising market, absolute dips are rare. A name that is down at least 3% over 1-5 days while SPY is flat or up, with its trend intact, qualifies.\n- Skip drops caused by confirmed bad news (earnings miss, guidance cut, sector shock). \"Looks stock-specific\" is not enough to skip. Check the news, and if nothing clear turns up, the dip is tradeable.\n- Make at most one new entry per day.\n\n## Deploying cash\n- Target 2-4 positions and 40-60% of the account invested, spread across sectors (financials, healthcare, staples, industrials, tech).\n- **Anti-idle rule:** if less than 25% is invested and there has been no entry for 3 straight decision days, buy the best qualifying candidate (even a marginal relative-weakness dip) at conf 3, about $70-90.\n- If SPY makes a new -3% or worse day, pause new buys. Keep the existing positions unless their stops are hit.\n\n## Costs and orders\n- Spread penalties total $5.29 (about 1.06% of the account). Trade only large, tight-spread names, with each position at least about $70.\n- Fills come in 1-3% worse than the limit. Set the limit at or slightly below the last price. Re-base the stop and target on the actual fill. Skip a trade if less than about 3% of bounce is left from a realistic fill.\n\n## Exits (mechanical)\n- Defaults from the fill: take profit +5%, stop -5%, time stop 10 trading days. Sell on the time-stop date (NVDA lesson).\n- Exit on a close at or below the stop, within about 1% of it on a down-market day, or right away on bad news.\n\n## Confidence\n- Tournament data so far: conf 1-4 averaged -0.13% (6 buys), 5-7 averaged -4.23% (13), 8-10 averaged -6.25% (2). Higher confidence keeps doing worse.\n- Default to conf 3. Use 4-5 only for a textbook setup with a clean news check. Never go above 5.\n",
+  "C": "# Strategy C notes: Catalyst reader\n\n## Identity\nTrade only when a specific headline explains a price move, or explains why a stock didn't move. Look for over- and under-reactions. Holding cash is allowed. The lead over SPY (\u22120.85% vs SPY \u22123.01% since start) comes almost entirely from holding cash in falling weeks. W6 confirmed the cost: holding cash in a +2.2% SPY week gave up about 2% of that lead.\n\n## Entry rules\n- Each session, name the best catalyst setup and give it a verdict: (a) what the news changes over 12 months, (b) whether the move is bigger than that, (c) buy, or hold with a specific reason.\n- **Watchlist carry-forward:** check every flagged-but-skipped name first, every session. Drop a name after 5 sessions or if the thesis breaks.\n- **Overreaction (>5% on specific news):** buy only after a green close that beats SPY by at least 1% that day, or after a full session holding above the prior low. A broad-rally green day doesn't count as confirmation.\n- **No headline, no trade.** Skip big moves that no news explains.\n- **Underreaction:** concrete material news with a move under 1%. Log one named candidate every session. **New (trial):** if 3 sessions in a row end in cash while SPY is up, buy the best stock-specific underreaction at conf 3, provided the news plausibly changes 12-month earnings or guidance. Outages, PR pledges and repeated sector headlines don't qualify.\n- Prefer single-company catalysts. Stay out while a sector or macro selloff keeps adding bad news. Don't buy into structural downtrends.\n\n## Data hygiene\n- If every price shows 0.0%, the data is stale: hold, and say so.\n\n## Sizing and confidence\n- Tournament results: confidence 1\u20134 avg \u22120.13% (n=6), 5\u20137 \u22124.23% (n=13), 8\u201310 \u22126.25% (n=2). Higher confidence has done worse every week so far.\n- Starters use confidence 3\u20134. Never go above 6. Add only after a further confirmed close that beats SPY. Hold at most 2 positions.\n\n## Exits\n- **Time stop, strict:** session 1 is the fill day. If the position is below cost at the end of session 3, exit at the next decision, with no extensions. This was applied correctly in W6.\n- **Thesis break:** if new negative news widens the story, exit or cut by half.\n- **Take profit** once about half the overreaction has retraced.\n\n## Log\n- W1: 0 trades, \u22120.01% vs SPY +0.68%.\n- W2: \u22120.83% vs SPY \u22121.96%. Bought SMH too early.\n- W3: +0.30% vs SPY \u22120.42%. SMH time-stop exit.\n- W4: \u22120.02% vs SPY \u22120.54%. Flagged names never followed up.\n- W5: \u22120.33% vs SPY \u22122.64%. GOOGL bought on a broad-rally day.\n- W6: +0.05% vs SPY +2.18%. GOOGL time-stop exit (\u2212$1.18), then cash all week. No qualifying catalyst was found.\n",
+  "D": "# Strategy D notes: Small-cap explorer\n\nIdentity: find tradable small-cap opportunities that SPY doesn't capture. Record: 1 trade in 7 weeks. KD was a Tier 3 starter: bought at 17.49, sold at 17.13 on its time stop, about -2%, -$1.03. We're at -0.30% since start and SPY is at -3.01%. That lead comes from sitting in cash while SPY fell, not from edge. In up weeks, cash lags (this week +0.46% vs SPY +2.18%).\n\n## What the data looks like\n- The mover list shows extremes: \u00b125% or more, warrants, illiquid names, and leveraged ETFs. The 3\u201315% band has been empty for 5 weeks. If it's empty, say so in one line. Don't list the rejects.\n- The day's range is often not shown.\n\n## Screening\n- Drop warrants, units, rights, leveraged or inverse ETFs, anything under $0.50, volume under $1M, spreads over 1.5%, and moves of \u00b140% or more.\n- Tier 1: names moving \u00b13\u201315% with a spread of 1.5% or less and real volume.\n- Tier 2 (watchlist): liquid names moving 15\u201340%. Buy only on day-2 continuation or a stabilized 30\u201350% pullback. Write the name down. If it isn't visible the next day, drop it.\n- Tier 3 (day-1 starter, max 1 per week): an up-move of 15\u201335%, spread \u22640.5%, volume \u2265$10M, and a news catalyst. Put the limit 3\u20135% below the close; KD filled at full price and went straight down. Confidence 3, smallest size. Stop at the midpoint between the prior close and entry. Target 2x risk. Max hold 3 sessions.\n- No new entries on days SPY is down 2% or more.\n\n## Entry and sizing\n- Confidence 3\u20134, max 2 names, limit orders only. Don't chase.\n- The expected move must be at least 3x the spread.\n\n## Exits\n- Set the stop, target and time stop before buying, and follow them mechanically. The KD time stop worked: it capped the loss at about 2% without extending the hold. Keep doing this.\n- Don't hold through binary events.\n\n## Confidence\n- Tournament-wide buys: 1\u20134 averaged -0.13% (n=6), 5\u20137 averaged -4.23% (n=13), 8\u201310 averaged -6.25% (n=2). That makes 3 weeks in a row where higher confidence went with worse results.\n- Default is 3. Use 5 only with a fresh catalyst, spread \u22641%, and a clean chart. Never use 6 or higher.\n",
+  "E": "# Strategy E: Claude's pick: S&P core with a small QQQ tilt, very few trades\n\n## Approach\nQQQ held against SPY is a beta/tech bet, not a proven edge. Since the start we are -8.5% vs SPY -3.0%. The gap comes from tech-led selloffs and the early META loss. The goal now is to track SPY closely with a modest QQQ tilt, keep spread costs low and avoid idle cash. Don't try to win back the gap with big bets.\n\n## Target allocation (check once per week; act only if more than 7 points off target)\n- **SPY below its 50-day average (or can't verify): QQQ about 55%, S&P 500 ETFs about 40%, cash 5% or less.**\n- SPY above its 50-day on 3 consecutive verified closes: QQQ about 70%, S&P ETFs about 25%.\n- S&P exposure can sit in SPY **and IVV or VOO** (same index). The per-position cap blocks adding SPY above about 35%, so put the overflow into IVV/VOO instead of leaving it as cash.\n- Current state: QQQ about 55%, SPY about 35%, cash about 10%. Next action: one buy of about $40 of IVV (or VOO) at conf 5. After that, HOLD.\n- Never sell QQQ just to fit under the cap. Caps limit buys, not existing holdings.\n\n## Single stocks\n- None for now. Revisit only after 3 verified closes above the 50-day, and then at most 10% of equity in one large-cap name, with no earnings report within 5 trading days.\n\n## Orders\n- Limit price: last to +0.3%. If an order expires twice, drop it. No trades under $25. Sweep cash once it exceeds 8%.\n- Sale proceeds take a day to settle. Plan sell\u2192buy as a 2-day sequence.\n\n## Confidence\n- Confidence is a **size knob tied to the code caps, not conviction**. Conf 3 allows about a 15% position, which blocked a needed rebalance buy. Use conf 5 for index/ETF buys that the allocation requires. Never go above 5. Tournament-wide, higher-confidence buys did worse (8-10 averaged -6.3%, 5-7 -4.2%, 1-4 -0.1%), so don't use high confidence to express conviction.\n\n## Habits\n- The default is HOLD. 0-1 trades per week. Log a one-line reason for each trade.\n"
  }
 }

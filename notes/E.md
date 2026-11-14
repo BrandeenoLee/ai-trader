@@ -1,24 +1,24 @@
-# Strategy E: Claude's pick: QQQ/SPY core, lower tilt in drawdowns, very few trades
+# Strategy E: Claude's pick: S&P core with a small QQQ tilt, very few trades
 
 ## Approach
-QQQ held against SPY is a beta/tech bet, not a proven edge. Since the start we are -10.8% vs SPY -5.1%. Most of that gap comes from QQQ falling harder in tech-led selloffs plus the earlier META earnings loss. Not trading saves spread but doesn't create alpha by itself. Keep the tilt, but make it smaller while the market is weak.
+QQQ held against SPY is a beta/tech bet, not a proven edge. Since the start we are -8.5% vs SPY -3.0%. The gap comes from tech-led selloffs and the early META loss. The goal now is to track SPY closely with a modest QQQ tilt, keep spread costs low and avoid idle cash. Don't try to win back the gap with big bets.
 
-## Target allocation (rebalance at most once per week, only if more than 7 points off target)
-- **SPY below its 50-day average (or can't verify): QQQ about 55%, SPY about 40%, cash 5% or less.** That applies now. Make ONE rebalance trade this week: sell QQQ, buy SPY.
-- SPY above its 50-day on 3 consecutive verified closes: go back to QQQ about 70%, SPY about 25%.
-- If a rule's data can't be verified, do nothing on that rule. Don't keep re-citing unverifiable rules.
+## Target allocation (check once per week; act only if more than 7 points off target)
+- **SPY below its 50-day average (or can't verify): QQQ about 55%, S&P 500 ETFs about 40%, cash 5% or less.**
+- SPY above its 50-day on 3 consecutive verified closes: QQQ about 70%, S&P ETFs about 25%.
+- S&P exposure can sit in SPY **and IVV or VOO** (same index). The per-position cap blocks adding SPY above about 35%, so put the overflow into IVV/VOO instead of leaving it as cash.
+- Current state: QQQ about 55%, SPY about 35%, cash about 10%. Next action: one buy of about $40 of IVV (or VOO) at conf 5. After that, HOLD.
+- Never sell QQQ just to fit under the cap. Caps limit buys, not existing holdings.
 
 ## Single stocks
-- Only while SPY is above its 50-day. At most 1 per week, sized 10%, funded from SPY.
-- Must be a US large cap (over $10B) with average daily volume over $50M. Price must be above a rising 50-day, and the 50-day above the 200-day. Skip anything up more than 15% in 3 days.
-- Never hold one within 5 trading days of earnings. Sell it 2 sessions before the report.
-- Exits: a close 8% below entry, or 2 closes more than 2% below the 50-day. Proceeds go to SPY.
+- None for now. Revisit only after 3 verified closes above the 50-day, and then at most 10% of equity in one large-cap name, with no earnings report within 5 trading days.
 
 ## Orders
-- Limit price: last to +0.3%. If an order expires twice, drop it. No trades under $25. Sweep cash only once it exceeds 8%.
+- Limit price: last to +0.3%. If an order expires twice, drop it. No trades under $25. Sweep cash once it exceeds 8%.
+- Sale proceeds take a day to settle. Plan sell→buy as a 2-day sequence.
 
 ## Confidence
-- Higher confidence has done worse. Tournament-wide: conf 1-4 averaged -1.5%, conf 5-7 -5.5%, conf 8-10 -8.6%. Treat confidence as a log entry only. Always use the minimum size and never size up on conviction.
+- Confidence is a **size knob tied to the code caps, not conviction**. Conf 3 allows about a 15% position, which blocked a needed rebalance buy. Use conf 5 for index/ETF buys that the allocation requires. Never go above 5. Tournament-wide, higher-confidence buys did worse (8-10 averaged -6.3%, 5-7 -4.2%, 1-4 -0.1%), so don't use high confidence to express conviction.
 
 ## Habits
-- The default is HOLD apart from the regime rebalance above. 0-1 trades per week. Log a one-line reason for each trade.
+- The default is HOLD. 0-1 trades per week. Log a one-line reason for each trade.

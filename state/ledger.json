@@ -205,21 +205,21 @@
       "date": "2026-11-12"
     },
     {
-      "A": 448.4636,
-      "B": 501.5182,
+      "A": 448.5388,
+      "B": 501.7883,
       "C": 495.7475,
       "D": 498.4911,
-      "E": 458.7079,
-      "SPY": 485.7016,
+      "E": 457.4817,
+      "SPY": 484.9472,
       "date": "2026-11-13"
     }
   ],
   "started": "2026-10-08",
   "strategies": {
     "A": {
-      "ai_cost": 0.48579,
+      "ai_cost": 0.52959,
       "cash": 66.217751,
-      "checkin_level": 2,
+      "checkin_level": 1,
       "penalty_paid": 4.158383,
       "pending_orders": [],
       "positions": {
@@ -245,9 +245,9 @@
       "unsettled": []
     },
     "B": {
-      "ai_cost": 0.471176,
+      "ai_cost": 0.518368,
       "cash": 425.467904,
-      "checkin_level": 3,
+      "checkin_level": 2,
       "penalty_paid": 5.289278,
       "pending_orders": [],
       "positions": {
@@ -263,9 +263,9 @@
       "unsettled": []
     },
     "C": {
-      "ai_cost": 0.569894,
+      "ai_cost": 0.623106,
       "cash": 496.317413,
-      "checkin_level": 5,
+      "checkin_level": 4,
       "penalty_paid": 0.411788,
       "pending_orders": [],
       "positions": {},
@@ -275,9 +275,9 @@
       "unsettled": []
     },
     "D": {
-      "ai_cost": 0.48034,
+      "ai_cost": 0.532588,
       "cash": 498.971407,
-      "checkin_level": 5,
+      "checkin_level": 4,
       "penalty_paid": 0.08575,
       "pending_orders": [],
       "positions": {},
@@ -287,24 +287,11 @@
       "unsettled": []
     },
     "E": {
-      "ai_cost": 0.561606,
-      "cash": 44.67598,
-      "checkin_level": 1,
-      "penalty_paid": 0.862343,
-      "pending_orders": [
-        {
-          "client_id": "E-d6d5cd39f641",
-          "confidence": 5,
-          "limit_price": 755.5,
-          "order_id": "ed9c262a-e081-4db2-b0d3-9a213b6a0bdf",
-          "penalty_pct": 0.0005,
-          "qty": 0.0847,
-          "reserved_cash": 63.990849999999995,
-          "side": "buy",
-          "submitted": "2026-11-13T15:26:24.223911-05:00",
-          "symbol": "SPY"
-        }
-      ],
+      "ai_cost": 0.61541,
+      "cash": 44.834146,
+      "checkin_level": 2,
+      "penalty_paid": 0.894243,
+      "pending_orders": [],
       "positions": {
         "QQQ": {
           "cost_basis": 271.07331,
@@ -312,14 +299,14 @@
           "reserved_qty": 0.0
         },
         "SPY": {
-          "cost_basis": 96.845028,
-          "qty": 0.1261,
+          "cost_basis": 160.677712,
+          "qty": 0.2108,
           "reserved_qty": 0.0
         }
       },
       "realized_pnl": -23.414832,
-      "reserved": 63.99085,
-      "trades": 9,
+      "reserved": 0.0,
+      "trades": 10,
       "unsettled": []
     }
   }
